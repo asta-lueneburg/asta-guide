@@ -1,12 +1,16 @@
 # Bausteine (Vorlagen)
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Für wiederkehrende Layouts gibt es fertige Bausteine. WordPress nennt sie **Vorlagen**
 (englisch: Patterns). Ihr findet sie im Editor über das **+**-Symbol und dort im Reiter
 **Vorlagen**.
 
-![Der Reiter Vorlagen im Block-Inserter mit der Liste der AStA-Vorlagen und ihren Kategorien](/img/guide-gwyneth/muster-inserter.png)
-
-*Der Reiter **Vorlagen**: links die Kategorien, rechts die Bausteine.*
+<Screenshot
+  src="/img/guide-gwyneth/muster-inserter.png"
+  alt="Der Reiter Vorlagen im Block-Inserter mit der Liste der AStA-Vorlagen und ihren Kategorien"
+  caption="Der Reiter Vorlagen: links die Kategorien, rechts die Bausteine."
+/>
 
 ## Welche Bausteine der AStA bereitstellt
 
@@ -21,10 +25,9 @@ Die Namen stehen im Editor auf Englisch — sie sind Teil des Themes und werden 
 | **Upcoming Events** | Beiträge | Fünf kommende Termine als Liste mit Datumsplakette | nichts — zieht die Beiträge der Kategorie **Veranstaltungen** |
 | **Event Card** | Beiträge | Eine einzelne Terminzeile | nur innerhalb von *Upcoming Events* sinnvoll |
 | **Referate Grid** | Dienste | Kacheln aller veröffentlichten Referate | nichts — siehe unten |
-| **Referat Card** | Dienste | Eine einzelne Referatskachel | Name, Text, Kontakt, Logo |
 | **Service Icon Grid** | Dienste | Die sechs Schnellzugriff-Kacheln | nichts — die Ziele sind fest hinterlegt |
-| **AStA Contact Card** | Kontakt | Büro-Adresse, Zeiten, E-Mail, Telefon | nur, wenn sich Zeiten oder Kontaktdaten ändern |
-| **Dark Mode Toggle** | Text | Der Schalter zwischen hell und dunkel | nichts |
+| **AStA Contact Card** | Kontakt | Büro-Adresse, Zeiten, E-Mail, Telefon für Service- und allgemeine Seiten | nur, wenn sich Zeiten oder Kontaktdaten ändern |
+| **Dark Mode Toggle** | Text | Der Schalter zwischen hell und dunkel (reines Text-Label ohne Emoji-Symbole) | nichts |
 | **Social Media (Instagram)** | ohne Gruppe | Überschrift „Social Media“ und der Instagram-Feed | nichts |
 
 :::info Diese Bausteine ziehen ihre Inhalte selbst
@@ -34,6 +37,14 @@ existieren: ein Beitrag mit Kategorie **Veranstaltungen** bzw. eine veröffentli
 Referatsseite mit Logo.
 :::
 
+:::tip Kontaktbox auf Referat-Seiten vs. Service-Seiten
+Für Referate und Autonome Gruppen gibt es keinen Baustein zum Einfügen in den Text:
+Referat-Seiten pflegen ihre Infobox direkt über das Seitenleisten-Panel
+**Übersichtskarte (Referat)** und ihr Startseiten-Badge über **Badge (Startseite)** —
+siehe [Referat-Seiten pflegen](./referat-seite.mdx). **AStA Contact Card** bleibt für
+Servicebetriebe und allgemeine AStA-Seiten gedacht.
+:::
+
 ### Referate Grid
 
 Der Baustein liest alle veröffentlichten Seiten unter **AStA Referate**
@@ -41,7 +52,9 @@ Der Baustein liest alle veröffentlichten Seiten unter **AStA Referate**
 **Beitragsbild** der jeweiligen Referatsseite.
 
 Die Reihenfolge folgt dem Feld **Reihenfolge** in den Seiten-Attributen; ohne Eintrag
-steht dort die alphabetische Reihenfolge nach Titel.
+steht dort die alphabetische Reihenfolge nach Titel. Das optionale Badge unten rechts
+auf der Kachel wird im Panel **Badge (Startseite)** auf der deutschen Referatsseite
+eingestellt.
 
 Ein neues Referat erscheint also dann in der Übersicht, wenn
 
@@ -49,9 +62,13 @@ Ein neues Referat erscheint also dann in der Übersicht, wenn
 2. sie unter „AStA Referate“ eingeordnet ist, und
 3. ein Beitragsbild (das Logo) gesetzt ist.
 
-![Kacheln der Referate mit Logo, Name und Kontakt](/img/guide-gwyneth/referate-grid.png)
+Alle Details dazu stehen unter [Referat-Seiten pflegen](./referat-seite.mdx).
 
-*Das **Referate Grid** auf der Startseite: eine Kachel pro veröffentlichter Referatsseite.*
+<Screenshot
+  src="/img/guide-gwyneth/referate-grid.png"
+  alt="Kacheln der Referate mit Logo, Name und Kontakt"
+  caption="Das Referate Grid auf der Startseite: eine Kachel pro veröffentlichter Referatsseite."
+/>
 
 ## Diese Bausteine nicht verwenden
 

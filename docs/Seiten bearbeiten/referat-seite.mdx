@@ -1,0 +1,104 @@
+---
+title: Referat-Seiten pflegen
+description: Beitragsbild, Reihenfolge, Badge (Startseite) und Übersichtskarte (Referat) auf Referatsseiten richtig ausfüllen.
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Referate und Autonome Gruppen haben eigene Seiten unter **AStA Referate** (englisch:
+**AStA Societies**, Pfad `asta-departments`). Neben dem Seitentext pflegt ihr vier
+Einstellungen direkt in der rechten Editor-Seitenleiste (Reiter **Seite**) — eigene
+Vorlagen für Referatskarten im Textbereich sind nicht mehr nötig.
+
+:::info Welche Felder wo erscheinen
+- **Beitragsbild**, **Reihenfolge** und **Badge (Startseite)** steuern die Kachel eures
+  Referats im [Referate Grid](./bausteine.mdx#referate-grid) auf der Startseite.
+- **Übersichtskarte (Referat)** erzeugt die Infobox (*Kontakt & Treffen* bzw. *Contact
+  & meetings*) direkt auf eurer Referatsseite.
+:::
+
+## 1. Beitragsbild (Logo) und Reihenfolge
+
+1. Referatsseite öffnen und rechts in der Seitenleiste den Reiter **Seite** wählen.
+2. Unter **Beitragsbild festlegen** das Logo des Referats aus der Mediathek wählen
+   (vorzugsweise SVG oder PNG mit transparentem Hintergrund) und einen kurzen
+   **Alternativtext** eintragen (z. B. den Namen des Referats).
+3. Unter **Seiten-Attribute → Reihenfolge** bei Bedarf eine Zahl eintragen. Sie bestimmt
+   die Position der Kachel im **Referate Grid**; ohne Zahl sortiert die Übersicht
+   alphabetisch nach dem Seitentitel.
+
+Weitere Hinweise zum Austausch eines Logos stehen unter [Galerie](../galerie.mdx).
+
+## 2. Badge (Startseite)
+
+Das Panel **Badge (Startseite)** erscheint in der rechten Seitenleiste **nur auf
+deutschen Referat-Seiten** (direkte Unterseiten von *AStA Referate*). Es legt die
+kleine Pill-Markierung unten rechts auf eurer Startseiten-Kachel fest.
+
+Unter **Art des Badges** stehen sechs Modi zur Auswahl:
+
+| Modus | Wirkung |
+|---|---|
+| **Automatisch** | Leitet das Badge automatisch aus der gespeicherten Treffzeit ab. |
+| **Regelmäßig** | Strukturierte Eingabe mit **Wochentag** (Montag–Sonntag), **Zeit**, **bis** (optional) und **Raum / Ort** (Hinweis: *Campus Lüneburg weglassen. Rotes Feld nur wenn nötig.*). |
+| **Nach Ankündigung** | Zeigt das feste Label `nach Ankündigung`. |
+| **Online** | Zeigt das feste Label `Online`. |
+| **Eigener Text** | Freitextfeld mit höchstens **32 Zeichen** (`… / 32 Zeichen`) und klickbaren **Beispiele**-Chips (z. B. `Mi 18:00 · C14.102`, `Do 16:00 · WoZi`, `Online`, `nach Ankündigung`). |
+| **Kein Badge** | Blendet das Badge auf der Startseiten-Kachel vollständig aus. |
+
+Direkt unter den Optionen zeigt die **Vorschau** die fertige Kachel mit Beitragsbild
+(oder dem Seitentitel als Fallback) und dem aktuellen Badge-Text in Echtzeit.
+
+<Screenshot
+  src="/img/guide-gwyneth/referat-badge-panel.png"
+  size="compact"
+  alt="Seitenleisten-Panel Badge (Startseite) im Block-Editor mit den sechs Modi unter Art des Badges und der Live-Kachelvorschau"
+  caption="Das Panel Badge (Startseite) in der rechten Seitenleiste — nur auf deutschen Referat-Seiten sichtbar."
+/>
+
+:::caution Kurz halten
+Badges liegen über dem Logo auf der Kachel. Nutzt im Modus **Regelmäßig** oder **Eigener
+Text** nur Wochentag, Uhrzeit und einen kurzen Raumkürzel (maximal 32 Zeichen), statt
+ganze Sätze einzutragen.
+:::
+
+## 3. Übersichtskarte (Referat)
+
+Das Panel **Übersichtskarte (Referat)** erscheint auf **deutschen und englischen
+Referat-Seiten** und steuert die rechte Infobox (*Kontakt & Treffen* / *Contact &
+meetings*) auf der jeweiligen Referatsseite.
+
+Folgende Felder stehen im Panel bereit:
+
+| Feld | Hinweis |
+|---|---|
+| **Rolle/Label** | Optionale Überschrift für die Kontaktzeile (Standard: „Ansprechpartner*in“ / „Contact person“) |
+| **Ansprechpartner*in** | Name(n) der zuständigen Person(en) |
+| **Zeiten-Label** | Optionale Überschrift für die Treffzeit (Standard: „Treffen“ / „Meeting“) |
+| **Treffzeit** | Wann das Referat sich trifft oder Sprechstunden anbietet |
+| **Raum-Label** | Optionale Überschrift für den Ort (Standard: „Raum“ / „Room“) |
+| **Raum/Ort** | Gebäude und Raumnummer oder Treffpunkt |
+| **E-Mail** | Funktionsadresse des Referats (wird als `mailto:`-Link dargestellt) |
+| **Instagram** | Nur das Handle ohne URL, z. B. `asta_lueneburg` (ohne `@`) |
+| **Telegram** | Vollständige URL, z. B. `https://t.me/…` |
+
+:::caution Mindestregel: 2 Felder
+**Mindestens 2 Felder ausfüllen, damit die Karte auf der Seite erscheint.** Sind weniger
+als zwei Inhaltsfelder belegt, blendet die Website die Übersichtskarte automatisch aus
+und die **Vorschau** im Panel weist darauf hin.
+:::
+
+<Screenshot
+  src="/img/guide-gwyneth/referat-overviewcard-panel.png"
+  size="compact"
+  alt="Seitenleisten-Panel Übersichtskarte (Referat) im Block-Editor mit Eingabefeldern für Rolle, Ansprechpartner*in, Treffzeit, Raum, E-Mail, Instagram, Telegram und der Live-Vorschau"
+  caption="Das Panel Übersichtskarte (Referat) auf deutschen und englischen Referat-Seiten mit Live-Vorschau."
+/>
+
+## 4. Keine Referat-Card-Vorlage im Inhalt einfügen
+
+Die frühere Vorlage *Referat Card* wurde aus dem Block-Inserter entfernt. Pflegt
+Kontaktdaten, Treffzeiten und Social-Media-Links von Referaten ausschließlich über
+**Übersichtskarte (Referat)** und **Badge (Startseite)** — für allgemeine Service-Seiten
+steht weiterhin der Baustein **AStA Contact Card** unter [Bausteine (Vorlagen)](./bausteine.mdx)
+bereit.

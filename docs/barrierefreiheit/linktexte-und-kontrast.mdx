@@ -31,14 +31,17 @@ Regeln:
 ## Kontrast
 
 Das Theme stellt sicher, dass Text und Hintergrund ein ausreichendes Kontrastverhältnis
-haben — in der hellen und in der dunklen Fassung. **Ihr könnt das brechen**, indem ihr
-eigene Farben setzt.
+haben — in der hellen und in der dunklen Fassung. Deshalb sind der freie Farbwähler, die
+Standard-WordPress-Paletten und -Verläufe, eigene Schriftgrößen und Initialen (Drop Caps)
+im Editor über `theme.json` gesperrt. **Trotzdem könnt ihr den Kontrast brechen**, wenn
+ihr Formatierungen aus Word/HTML einkopiert oder ungünstige Farbkombinationen wählt.
 
 Deshalb:
 
-- Für Text und Flächen die Palette des Themes verwenden: `primary`, `secondary`, `accent`,
-  `base`, `base-alt`, `contrast`, `contrast-alt`, `surface`.
-- Keine eigenen Hex-Werte für Textfarben.
+- Für Text und Flächen ausschließlich die sichtbare AStA-Palette verwenden: `primary`,
+  `secondary`, `accent`, `base`, `base-alt`, `contrast`, `contrast-alt`, `surface`, `link`.
+- Keine einkopierten Hex-Werte oder Inline-Styles für Textfarben („Als Text einfügen“
+  nutzen).
 - Keine Farbe als einziges Mittel der Unterscheidung („die roten Einträge sind wichtig“) —
   Farbe plus Text oder Symbol.
 - Fett statt Farbe, wenn etwas betont werden soll.

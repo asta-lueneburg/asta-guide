@@ -1,5 +1,7 @@
 # Was die Redaktion nicht sieht, aber wissen sollte
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Manches am Verhalten der Website ist im Editor nicht sichtbar, entscheidet aber darüber,
 ob Inhalte gefunden und gelesen werden.
 
@@ -7,16 +9,18 @@ ob Inhalte gefunden und gelesen werden.
 |---|---|
 | **Suchmaschinen** | Der **Textauszug** ist die Beschreibung im Suchergebnis. Fehlt er, nimmt das Theme den ersten Absatz; fehlt auch der, steht dort ein allgemeiner Satz mit dem Titel |
 | **Social Media** | Beim Teilen erscheint das **Beitragsbild** als Vorschau. Ohne Beitragsbild greift das Standard-Vorschaubild der Website |
-| **Dunkelmodus** | Die Website folgt der Systemeinstellung; der Schalter im Kopfbereich setzt sie manuell. Eigene Farben können im Dunkelmodus unlesbar werden |
+| **Dunkelmodus** | Die Website folgt der Systemeinstellung; der Schalter im Kopfbereich (reines Text-Label ohne Emoji-Symbole) setzt sie manuell. Eigene Farben können im Dunkelmodus unlesbar werden |
 | **Zwischenablage** | Beim Kopieren aus Word kommen unsichtbare Formatierungen mit. Nutzt „Als Text einfügen“ (`Cmd/Ctrl + Shift + V`) |
 | **Barrierefreiheit** | Wird geprüft, nicht nur empfohlen: Der Editor **markiert** fehlende Alternativtexte beim Bearbeiten. Das ist kein Geschmacksurteil |
 | **Suche** | Die Suche im Kopfbereich durchsucht Seiten und Beiträge. Ein aussagekräftiger Titel ist deshalb auch ein Suchfaktor |
 | **Englische Fassung** | Fehlt eine Übersetzung, bleibt an dieser Stelle der deutsche Inhalt stehen. Inhalte ohne Übersetzung erscheinen nicht im englischen Menü |
 | **URLs** | Die URL entsteht beim Anlegen aus dem Titel und bleibt danach stehen. Ein späterer Titelwechsel ändert sie nicht |
 
-![Suchergebnisseite mit Trefferliste und Trefferzahl](/img/guide-gwyneth/suchergebnis.png)
-
-*Die Suche im Kopfbereich: Sie durchsucht Seiten und Beiträge, nicht die Mediathek.*
+<Screenshot
+  src="/img/guide-gwyneth/suchergebnis.png"
+  alt="Suchergebnisseite mit Trefferliste und Trefferzahl"
+  caption="Die Suche im Kopfbereich: Sie durchsucht Seiten und Beiträge, nicht die Mediathek."
+/>
 
 ## Was das für die Praxis heißt
 
@@ -29,9 +33,11 @@ ob Inhalte gefunden und gelesen werden.
 4. **Der Dunkelmodus ist kein Sonderfall.** Wer Farben von Hand setzt, muss beide Modi
    prüfen — deshalb besser bei der Palette bleiben.
 
-![Startseite im Dunkelmodus mit dunklem Hintergrund und heller Schrift](/img/guide-gwyneth/startseite-dunkel.png)
-
-*Dieselbe Startseite im Dunkelmodus. Eigene Farben sehen hier oft anders aus als geplant.*
+<Screenshot
+  src="/img/guide-gwyneth/startseite-dunkel.png"
+  alt="Startseite im Dunkelmodus mit dunklem Hintergrund und heller Schrift"
+  caption="Dieselbe Startseite im Dunkelmodus. Der Schalter im Header nutzt ein reines Text-Label ohne Emoji-Symbole."
+/>
 
 ## Und was die Website automatisch macht
 
@@ -43,3 +49,23 @@ ob Inhalte gefunden und gelesen werden.
 
 Was sie **nicht** kann: fehlende Auszüge erfinden, fehlende Alternativtexte ergänzen und
 wissen, dass zwei Seiten dasselbe sagen. Das bleibt redaktionelle Arbeit.
+
+## Für die Webmaster-Stelle: Werkzeuge → AStA-Übersicht
+
+Administrator*innen finden im WordPress-Backend unter **Werkzeuge → AStA-Übersicht**
+eine schreibgeschützte Statusseite (Berechtigung `manage_options`). Sie ändert nichts in
+der Datenbank und zeigt zwei Übersichten:
+
+1. **Module:** Alle Funktionsmodule des Plugins `asta-gwyneth-custom` mit ihrem Status
+   (*Aktiv* / *Deaktiviert*) und ihrer Herkunft (*Standard* vs. *Gespeichert*).
+2. **Referate mit gespeicherten Anpassungen:** Alle deutschen und englischen
+   Referat-Seiten, auf denen eigene Felder gespeichert sind — aus Datenschutzgründen nur
+   als Kategorien (*Treffen*, *Ort*, *Kontakt*, *Social Media*, *Badge*) und Badge-Zustand
+   (*Automatisch*, *Eigener Text*, *Kein Badge*), ohne persönliche Kontaktdaten oder
+   Klartextwerte einzublenden.
+
+<Screenshot
+  src="/img/guide-gwyneth/admin-overview.png"
+  alt="Admin-Seite Werkzeuge → AStA-Übersicht mit der Modultabelle und der Tabelle der Referate mit gespeicherten Anpassungen"
+  caption="Werkzeuge → AStA-Übersicht: reiner Lesezugriff auf Modulstatus und gespeicherte Referate-Kategorien."
+/>

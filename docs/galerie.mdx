@@ -1,5 +1,7 @@
 # Galerie
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Bilder und Dateien für die Website: hochladen, beschreiben, austauschen und als Galerie
 auf einer Seite zeigen.
 
@@ -16,9 +18,11 @@ und Beiträge eingebunden, und von dort kommen auch die Logos in den Referate-Ka
 2. Datei auswählen, Upload abwarten.
 3. Bild anklicken und rechts die **Anhang-Details** ausfüllen.
 
-![Mediathek in der Rasteransicht mit den hochgeladenen Bildern](/img/guide-gwyneth/mediathek.png)
-
-*Die Mediathek: hier liegen alle Bilder, hier werden sie gesucht und ersetzt.*
+<Screenshot
+  src="/img/guide-gwyneth/mediathek.png"
+  alt="Mediathek in der Rasteransicht mit den hochgeladenen Bildern"
+  caption="Die Mediathek: hier liegen alle Bilder, hier werden sie gesucht und ersetzt."
+/>
 
 | Feld | Regel |
 |---|---|
@@ -28,9 +32,11 @@ und Beiträge eingebunden, und von dort kommen auch die Logos in den Referate-Ka
 | **Größe** | Fotos vor dem Upload auf höchstens 2000 px lange Kante verkleinern; die Website skaliert selbst, lädt aber das Original |
 | **Format** | JPEG für Fotos, PNG für Grafiken mit Transparenz, SVG nur für Logos |
 
-![Anhang-Details eines Bildes mit dem Feld Alternativer Text](/img/guide-gwyneth/anhang-alt-text.png)
-
-*Die **Anhang-Details** eines Bildes. In das Feld *Alternativer Text* kommt die Bildbeschreibung.*
+<Screenshot
+  src="/img/guide-gwyneth/anhang-alt-text.png"
+  alt="Anhang-Details eines Bildes mit dem Feld Alternativer Text"
+  caption="Die Anhang-Details eines Bildes. In das Feld Alternativer Text kommt die Bildbeschreibung."
+/>
 
 ## Ein Bild austauschen
 
@@ -47,7 +53,8 @@ Das Logo eines Referats ist das **Beitragsbild** der Referatsseite. Der Baustein
 **Referate Grid** holt es von dort und zeigt es in der Kachel.
 
 Wo das Logo gesetzt wird: Referatsseite öffnen → rechte Seitenleiste, Reiter „Seite“ →
-**Beitragsbild festlegen**.
+**Beitragsbild festlegen**. Wie ihr zusätzlich Reihenfolge, Startseiten-Badge und
+Kontaktkarte eines Referats pflegt, beschreibt [Referat-Seiten pflegen](./Seiten%20bearbeiten/referat-seite.mdx).
 
 ## Eine Galerie auf einer Seite
 

@@ -38,6 +38,11 @@ const sidebars = {
         'Seiten bearbeiten/seiten-bearbeiten',
         {
           type: 'doc',
+          id: 'Seiten bearbeiten/referat-seite',
+          label: 'Referat-Seiten pflegen',
+        },
+        {
+          type: 'doc',
           id: 'Seiten bearbeiten/bausteine',
           label: 'Bausteine (Vorlagen)',
         },

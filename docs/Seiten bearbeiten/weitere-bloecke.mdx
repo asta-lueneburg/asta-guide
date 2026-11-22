@@ -1,5 +1,7 @@
 # Einfügen weiterer Blöcke
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Neben Absatz und Überschrift gibt es eine Reihe von Blöcken, die auf fast jeder Seite
 vorkommen. Diese hier sind die wichtigsten.
 
@@ -9,9 +11,11 @@ ist schneller eingefügt und passt garantiert zum Layout — eigene Blockkombina
 braucht es nur für Sonderfälle.
 :::
 
-![Block-Inserter mit Suchfeld und der Liste aller verfügbaren Blöcke](/img/guide-gwyneth/block-inserter.png)
-
-*Der Block-Inserter: oben suchen, darunter die Blöcke nach Kategorie.*
+<Screenshot
+  src="/img/guide-gwyneth/block-inserter.png"
+  alt="Block-Inserter mit Suchfeld und der Liste aller verfügbaren Blöcke"
+  caption="Der Block-Inserter: oben suchen, darunter die Blöcke nach Kategorie."
+/>
 
 ## Bilder einbinden
 
@@ -78,5 +82,7 @@ kein Fehler — es schützt die Daten der Besuchenden.
 - **HTML-Blöcke** — nur, wenn die Webmaster-Stelle es ausdrücklich vorgibt.
 - **Shortcodes** — nur die dokumentierten, z. B. `[beschlussdatenbank]`. Siehe
   [Beschlussdatenbank](../beschlussdatenbank.mdx).
-- **Eigene Schriftgrößen und Farben** — die Palette des Themes übernehmen.
+- **Eigene Schriftgrößen, freie Farben und Initialen** — sind im Editor bereits über
+  `theme.json` deaktiviert (ebenso die Standard-WordPress-Farbpaletten und -Verläufe).
+  Wählt ausschließlich aus den vorgegebenen Größen und der AStA-Palette.
 - **Leere Absätze als Abstandshalter** — Abstände kommen aus den Blöcken.
