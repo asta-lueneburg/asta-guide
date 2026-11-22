@@ -1,61 +1,59 @@
 import React from 'react';
-import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import styles from './HomepageFeatures.module.css';
 
-const FeatureList = [
+const TaskCards = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    step: '01 · Neuigkeiten',
+    title: 'Beitrag schreiben',
+    to: '/docs/beitraege-erstellen',
+    description:
+      'Meldungen, Termine oder Aufrufe im Block-Editor verfassen, mit Beitragsbild und Textauszug versehen und veröffentlichen.',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    step: '02 · Referate & Bereiche',
+    title: 'Referatsseite pflegen',
+    to: '/docs/Seiten%20bearbeiten/referat-seite',
+    description:
+      'Steckbrief, Sprechzeiten, Ansprechpersonen und Vorlagen auf der eigenen Referatsseite aktuell halten.',
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    step: '03 · Zweisprachig',
+    title: 'Übersetzen (DE / EN)',
+    to: '/docs/uebersetzungen-bearbeiten',
+    description:
+      'Deutsche und englische Fassungen mit Polylang sauber verknüpfen und Inhalte parallel pflegen.',
+  },
+  {
+    step: '04 · Qualitätssicherung',
+    title: 'Checkliste vor dem Veröffentlichen',
+    to: '/docs/checkliste',
+    description:
+      'Alternativtexte, Textauszug, Links und die Darstellung im Hell- und Dunkelmodus kurz gegenprüfen.',
   },
 ];
 
-function Feature({Svg, title, description}) {
+function TaskCard({ step, title, to, description }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
+    <Link className={styles.card} to={to}>
+      <span className={styles.cardStep}>{step}</span>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <p className={styles.cardDescription}>{description}</p>
+      <span className={styles.cardAction}>Zur Anleitung →</span>
+    </Link>
   );
 }
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
+    <section
+      className={styles.features}
+      aria-label="Häufige Aufgaben im AStA-Guide">
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+        <h2 className={styles.sectionTitle}>Womit möchtest du starten?</h2>
+        <div className={styles.grid}>
+          {TaskCards.map((card) => (
+            <TaskCard key={card.to} {...card} />
           ))}
         </div>
       </div>

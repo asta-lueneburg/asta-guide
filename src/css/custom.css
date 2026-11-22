@@ -109,6 +109,34 @@ html[data-theme='dark'] {
   border-bottom: 3px solid var(--ifm-color-primary);
 }
 
+/* Hero-Banner: in Hell und Dunkel auf Gwyneth-Violett mit weißem Text (AA/AAA). */
+.hero--primary {
+  --ifm-hero-background-color: #6d28d9;
+  --ifm-hero-text-color: #ffffff;
+}
+
+html[data-theme='dark'] .hero--primary {
+  --ifm-hero-background-color: #4c1c98;
+  --ifm-hero-text-color: #ffffff;
+}
+
+.hero--primary .hero__title,
+.hero--primary .hero__subtitle {
+  color: #ffffff;
+}
+
+.hero--primary .button--secondary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0f0d1a;
+}
+
+.hero--primary .button--secondary:hover {
+  background-color: #f5f3ff;
+  border-color: #f5f3ff;
+  color: #0f0d1a;
+}
+
 /* Seitenleiste: aktiver Eintrag in der Primärfarbe mit Flächenhintergrund. */
 .menu__link--active,
 .menu__link--active:hover {

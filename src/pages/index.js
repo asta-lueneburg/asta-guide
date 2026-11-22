@@ -11,7 +11,11 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img src="img/asta-logo.svg" className={styles.heroLogo} />
+        <img
+          src="img/asta-logo.svg"
+          alt="AStA Universität Lüneburg"
+          className={styles.heroLogo}
+        />
         <h1 className="hero__title">Interner AStA-Guide</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
@@ -30,9 +34,12 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={'Wilkommen'}
-     >
+      title="Willkommen"
+      description={siteConfig.tagline}>
       <HomepageHeader />
+      <main>
+        <HomepageFeatures />
+      </main>
     </Layout>
   );
 }
