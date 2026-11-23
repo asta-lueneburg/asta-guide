@@ -88,3 +88,15 @@ test('required i18n/en JSON translation catalogs exist and parse cleanly', () =>
     assert.ok(parsed !== null && !Array.isArray(parsed), `Expected JSON map in ${rel}`);
   }
 });
+
+test('archived German-only docs avoid relative .mdx links that break en fallback builds', () => {
+  for (const rel of ARCHIVED_DOCS) {
+    const content = fs.readFileSync(path.join(docsDir, rel), 'utf8');
+    assert.doesNotMatch(
+      content,
+      /\]\([^)]+\.mdx?\)/,
+      `Archived doc ${rel} must use extensionless doc route links so fallback en build resolves them`,
+    );
+  }
+});
+
