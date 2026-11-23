@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes: prismThemes } = require('prism-react-renderer');
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -11,9 +12,13 @@ const config = {
   url: 'https://guide.asta-lg.de',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/asta-mark.svg',
-  organizationName: 'asta-luneburg', // Usually your GitHub org/user name.
+  organizationName: 'asta-lueneburg', // Usually your GitHub org/user name.
   projectName: 'asta-guide', // Usually your repo name.
 
   presets: [
@@ -23,22 +28,31 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/asta-luneburg/asta-guide/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/asta-lueneburg/asta-guide/edit/main/',
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
             type: 'all',
           },
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/asta-luneburg/asta-guide/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/asta-lueneburg/asta-guide/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
+    ],
+  ],
+
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['de', 'en'],
+        indexBlog: true,
+        forceIgnoreNoIndex: true,
+      },
     ],
   ],
 
@@ -102,7 +116,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/asta-luneburg/asta-guide',
+                href: 'https://github.com/asta-lueneburg/asta-guide',
               },
             ],
           },

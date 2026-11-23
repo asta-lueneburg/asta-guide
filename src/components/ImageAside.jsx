@@ -9,9 +9,9 @@ export default function ImageAside({ reverse = false, third = false, src, alt = 
 				<img src={src} alt={alt} className={styles.image} loading="lazy" decoding="async" />
 			</section>
 			<section className={styles.textCol}>
-				<p>
+				<div>
 					{children}
-				</p>
+				</div>
 			</section>
 		</div>
 	);

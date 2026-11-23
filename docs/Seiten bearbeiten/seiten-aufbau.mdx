@@ -1,5 +1,7 @@
 # Aufbau der Seiten
 
+import Screenshot from '@site/src/components/Screenshot';
+
 Alle Seiten der Website folgen demselben Aufbau. Das macht die Website ruhig und
 wiedererkennbar — und es macht Seiten schnell zu pflegen, weil niemand für jede Seite
 neu über Layout entscheiden muss.
@@ -16,12 +18,15 @@ neu über Layout entscheiden muss.
 :::info Der wichtigste Unterschied zu früher
 Es gibt **keine Seitenleiste mehr** und keine Widgets. Jede Seite ist eine vollbreite
 Blockvorlage. Was früher in der Seitenleiste stand (Kontakt, Öffnungszeiten,
-Ansprechpartner*innen), gehört heute in den Seiteninhalt — dafür gibt es den Baustein
-**AStA Contact Card**.
+Ansprechpartner*innen), gehört heute auf Service- und allgemeinen Seiten in den Baustein
+**AStA Contact Card** — auf Referat-Seiten direkt in das Seitenleisten-Panel
+[Übersichtskarte (Referat)](./referat-seite.mdx).
 
-![Kontaktkarte des AStA mit Adresse, Bürozeiten, E-Mail und Telefon](/img/guide-gwyneth/kontaktkarte.png)
-
-*Was früher in der Seitenleiste stand, ist heute ein Baustein im Inhalt: die AStA Contact Card.*
+<Screenshot
+  src="/img/guide-gwyneth/kontaktkarte.png"
+  alt="Kontaktkarte des AStA mit Adresse, Bürozeiten, E-Mail und Telefon"
+  caption="Was früher in der Seitenleiste stand, ist heute ein Baustein im Inhalt: die AStA Contact Card."
+/>
 :::
 
 ## Titel
@@ -50,21 +55,25 @@ aus dem alten Theme, in dem der Seitentitel keine eigene Überschrift war.
 
 - Der Inhalt läuft in einer zentrierten Spalte. Für breite Abschnitte (Kachelreihen,
   Karten-Grids) bringen die Bausteine die passende Breite mit.
-- **Schriftgrößen, Schriftarten und Farben werden nicht manuell gesetzt.** Das Theme
-  zieht sie aus den Design-Tokens. Eigene Werte brechen den Dunkelmodus und den Kontrast.
+- **Eigene Schriftgrößen, eigene Farben, die WordPress-Standardpalette und Initialen
+  (Drop Caps) sind im Editor deaktiviert (`theme.json`).** Ihr könnt nur die
+  vorgegebenen Textgrößen und die AStA-Farbpalette auswählen — das schützt Dunkelmodus
+  und Kontrast automatisch.
 - Abstände entstehen durch Blöcke und Gruppen, nicht durch leere Absätze.
 - Trennlinien sind erlaubt, aber kein Pflichtbestandteil mehr.
 
 ## Farben
 
-Die Website hat eine feste Palette. Wenn ihr eine Farbe braucht, wählt sie aus der
-Palette:
+Die Website hat eine feste Palette; der freie Farbwähler sowie Standard-Paletten und
+Standard-Farbverläufe von WordPress sind im Editor gesperrt. Wenn ihr eine Farbe braucht,
+wählt sie direkt aus der AStA-Palette:
 
 `primary` · `secondary` · `accent` · `base` · `base-alt` · `contrast` · `contrast-alt` ·
-`surface`
+`surface` · `link`
 
-Eigene Hex-Werte sind in der Regel ein Zeichen dafür, dass die Stelle anders gelöst
-werden sollte. Siehe auch [Linktexte und Kontrast](../barrierefreiheit/linktexte-und-kontrast.mdx).
+Eigene Hex-Werte (z. B. beim Einkopieren aus Word oder HTML) brechen den Dunkelmodus und
+sollten nicht verwendet werden. Siehe auch
+[Linktexte und Kontrast](../barrierefreiheit/linktexte-und-kontrast.mdx).
 
 ## Länge und Struktur
 
@@ -72,5 +81,6 @@ Lange Seiten sind in Ordnung, wenn sie gegliedert sind:
 
 1. Ein Absatz, der sagt, worum es auf der Seite geht.
 2. Abschnitte mit H2 und kurzen Absätzen.
-3. Am Ende der Weg zum Kontakt — bei Referaten und Servicebetrieben der Baustein
-   **AStA Contact Card** oder ein eigener Kontaktblock.
+3. Am Ende der Weg zum Kontakt — bei Servicebetrieben und allgemeinen Seiten der Baustein
+   **AStA Contact Card**, bei Referaten das Seitenleisten-Panel
+   [Übersichtskarte (Referat)](./referat-seite.mdx).
