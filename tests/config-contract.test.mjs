@@ -20,6 +20,11 @@ test('docusaurus.config.js points editUrl and org links to asta-lueneburg/asta-g
   assert.equal(classic.docs.editUrl, 'https://github.com/asta-lueneburg/asta-guide/edit/main/');
   assert.equal(classic.blog.editUrl, 'https://github.com/asta-lueneburg/asta-guide/edit/main/');
   assert.equal(config.onBrokenLinks, 'throw');
+  const searchTheme = config.themes.find(
+    (entry) => Array.isArray(entry) && String(entry[0]).includes('docusaurus-search-local'),
+  );
+  assert.ok(searchTheme, 'Expected docusaurus-search-local theme configuration');
+  assert.equal(searchTheme[1].forceIgnoreNoIndex, true);
 });
 
 test('deploy.yml uses Node 20 or 22 LTS', () => {

@@ -51,6 +51,7 @@ const config = {
         hashed: true,
         language: ['de', 'en'],
         indexBlog: true,
+        forceIgnoreNoIndex: true,
       },
     ],
   ],
