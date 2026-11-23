@@ -1,0 +1,92 @@
+# Building Blocks (Templates)
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Ready-made building blocks are available for recurring layouts. WordPress calls them
+**Patterns**. You can find them in the editor via the **+** icon under the **Patterns**
+tab.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/muster-inserter.png"
+  alt="The Patterns tab in the block inserter showing pattern categories on the left and AStA patterns on the right"
+  caption="The Patterns tab: categories on the left, building blocks on the right."
+/>
+
+## Building blocks provided by the AStA
+
+The pattern names are already in English in the WordPress editor—they are part of the
+theme. The second column lists the category under the **Patterns** tab where each block
+is located.
+
+| Building block | Category | Purpose | What you need to adjust |
+|---|---|---|---|
+| **Hero with CTA buttons** | Call to action | Intro banner with background image and two actions | Image, heading, text, both link targets |
+| **News Grid** | Posts | Three recent posts side by side | Nothing — pulls the latest posts automatically |
+| **News and Telegram Bento** | Posts | Five recent posts plus Telegram link | Only if the Telegram channel changes |
+| **Upcoming Events** | Posts | Five upcoming events as a list with date badges | Nothing — pulls posts from the **Events** (*Veranstaltungen*) category |
+| **Event Card** | Posts | A single event row | Only useful inside *Upcoming Events* |
+| **Referate Grid** | Services | Tiles for all published departments | Nothing — see below |
+| **Service Icon Grid** | Services | The six quick-access tiles | Nothing — targets are fixed |
+| **AStA Contact Card** | Contact | Office address, hours, email, phone for service and general pages | Only if hours or contact details change |
+| **Dark Mode Toggle** | Text | The switch between light and dark mode (plain text label without emoji icons) | Nothing |
+| **Social Media (Instagram)** | Uncategorized | "Social Media" heading and the Instagram feed | Nothing |
+
+:::info These building blocks pull their content automatically
+**News Grid**, **News and Telegram Bento**, and **Upcoming Events** read posts, while
+**Referate Grid** reads pages. You do not need to enter anything inside the block—but the
+underlying content must exist: a post in the **Events** (*Veranstaltungen*) category, or
+a published department page with a logo.
+:::
+
+:::tip Contact box on department pages vs. service pages
+For departments (*Referate*) and autonomous groups, there is no pattern to insert into
+the page body: department pages maintain their info box directly via the
+**Übersichtskarte (Referat)** sidebar panel and their homepage tile badge via
+**Badge (Startseite)**—see [Maintaining Department Pages](./referat-seite.mdx).
+**AStA Contact Card** remains intended for service units and general AStA pages.
+:::
+
+### Referate Grid
+
+This building block reads all published pages under **AStA Referate** (English: **AStA
+Societies**) and displays them as tiles. The tile logo is each department page's
+**Featured image**.
+
+Display order follows the **Order** field in **Page Attributes**; without a number, the
+grid sorts alphabetically by page title. The optional badge in the bottom-right corner of
+the tile is configured in the **Badge (Startseite)** panel on the German department page.
+
+A new department appears in the overview once:
+
+1. the page is published,
+2. it is filed as a child page under "AStA Referate" (or "AStA Societies"), and
+3. a **Featured image** (the logo) is set.
+
+Full details are in [Maintaining Department Pages](./referat-seite.mdx).
+
+<Screenshot
+  src="/img/guide-gwyneth-en/referate-grid.png"
+  alt="Department tiles showing logo, name, and meeting badge"
+  caption="The Referate Grid on the homepage: one tile per published department page."
+/>
+
+## Building blocks not to use
+
+In the **Patterns** tab, there are also roughly 40 theme building blocks with names like
+*Site footer: Default*, *Query loop: Default*, or *Sidebar*. Those are **theme template
+parts** that make up the header, footer, and archive pages.
+
+They do **not** belong inside page content. An accidentally inserted "Site footer" would
+appear right in the middle of your page.
+
+## After inserting
+
+An inserted building block brings placeholder content with it that must not go live:
+
+- [ ] Replace placeholder text with real text
+- [ ] Swap images and add alternative text
+- [ ] Check all links and use descriptive link text
+- [ ] Inspect the building block in dark mode
+- [ ] Check the page on a phone
+
+The full checklist is in [Pre-Publish Checklist](../checkliste.mdx).

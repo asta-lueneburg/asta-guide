@@ -1,0 +1,70 @@
+# What Editors Don't See (But Should Know)
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Some aspects of how the website behaves are not visible in the editor, yet determine
+whether content is found and read.
+
+| Topic | Summary |
+|---|---|
+| **Search engines** | The **Excerpt** becomes the description in search results. If left empty, the theme uses the first paragraph; if that is missing too, search results fall back to a generic line with the title |
+| **Social media** | When shared, the **Featured image** appears as the preview card image. Without one, the site's default preview image is used |
+| **Dark mode** | The website follows the system preference; the toggle in the header (plain text label without emoji icons) overrides it manually. Custom colors can become unreadable in dark mode |
+| **Clipboard** | Pasting from Word brings hidden formatting along. Use "Paste as plain text" (`Cmd/Ctrl + Shift + V`) |
+| **Accessibility** | Checked automatically, not just recommended: the editor **flags** missing alt text while you edit. This is not a matter of taste |
+| **Search** | Header search searches pages and posts. A clear, descriptive title therefore directly improves searchability |
+| **English version** | If a translation is missing, German content remains shown as fallback in some places. Untranslated items do not appear in the English menu |
+| **URLs** | The URL is generated from the title when creating the page/post and stays fixed afterward. Changing the title later does not update the URL |
+
+<Screenshot
+  src="/img/guide-gwyneth-en/suchergebnis.png"
+  alt="English search results page showing matching entries and result list"
+  caption="Header search: it searches pages and posts, not the Media Library."
+/>
+
+## What this means in practice
+
+1. **The Excerpt is part of publishing**, not an optional field. Two sentences are enough.
+2. **The Featured image is seen** before the post is read—in post listings and in link
+   previews when shared.
+3. **Formatting pasted from other programs** is the most common reason paragraphs look
+   broken. "Paste as plain text" prevents it.
+4. **Dark mode is not an edge case.** Anyone setting colors manually would have to check
+   both modes—which is why sticking to the AStA palette is safer.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/startseite-dunkel.png"
+  alt="English homepage in dark mode with dark background and light text"
+  caption="The same homepage in dark mode. The toggle in the header uses a plain text label without emoji icons."
+/>
+
+## What the website handles automatically
+
+- It builds the header, footer, menu, and language switcher from the design tokens.
+- It scales images and serves them in appropriate sizes.
+- It renders page and post titles as H1 and maintains the heading structure.
+- It links categories, archives, and search results.
+
+What it **cannot** do: invent missing excerpts, write missing alt text, or know that two
+pages say the same thing. That remains editorial work.
+
+## For the webmaster: Werkzeuge → AStA-Übersicht
+
+Administrators will find a read-only status page in the WordPress backend under
+**Werkzeuge → AStA-Übersicht** (*Tools* in an English WordPress profile; requires the
+`manage_options` capability). It does not modify anything in the database and displays
+two overviews:
+
+1. **Module:** All feature modules of the `asta-gwyneth-custom` plugin with their status
+   (*Aktiv* / *Deaktiviert*) and origin (*Standard* vs. *Gespeichert*).
+2. **Referate mit gespeicherten Anpassungen:** All German and English department pages
+   that have saved custom fields—for privacy reasons shown only as categories
+   (*Treffen*, *Ort*, *Kontakt*, *Social Media*, *Badge*) and badge state
+   (*Automatisch*, *Eigener Text*, *Kein Badge*), without exposing personal contact details
+   or plain-text values.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/admin-overview.png"
+  alt="Admin page Tools → AStA-Übersicht (Werkzeuge → AStA-Übersicht) showing the modules table and the table of departments with saved customizations"
+  caption="Werkzeuge → AStA-Übersicht (Tools in an English WordPress profile): read-only access to module states and saved department categories."
+/>

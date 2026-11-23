@@ -1,0 +1,85 @@
+# Page Structure & Layout
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Every page on the website follows the same structure. This keeps the site calm and
+recognizable—and makes pages quick to maintain, because nobody has to reinvent the layout
+for each individual page.
+
+## What a page contains
+
+| Part | Who sets it |
+|---|---|
+| **Header** (logo, search, language switcher, menu) | The theme. Not editable per page |
+| **Title** | You, as the page title. The theme renders it as H1 |
+| **Content** | You, built from blocks and building blocks (patterns) |
+| **Footer** | The theme, maintained centrally |
+
+:::info The most important difference from before
+There are **no sidebars anymore** and no widgets. Every page uses a full-width block
+template. Information that used to live in the sidebar (contact details, office hours,
+contact person) now belongs in the **AStA Contact Card** pattern on service and general
+pages—and on department (*Referat*) pages directly in the
+[Übersichtskarte (Referat)](./referat-seite.mdx) sidebar panel.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/kontaktkarte.png"
+  alt="AStA Contact Card showing address, office hours, email, and phone"
+  caption="What used to live in the sidebar is now a building block inside the content: the AStA Contact Card."
+/>
+:::
+
+## Title
+
+A page title is set **once**, in the dedicated title field. It automatically appears as
+the heading above your content.
+
+**Do not write the title a second time inside the content.** Otherwise it will appear twice
+in a row.
+
+## Headings
+
+Inside the body content, headings start at **H2**, with subsections using **H3**.
+
+| Level | Usage |
+|---|---|
+| H1 | Page title only (set by the theme) |
+| **H2** | Main sections of the page |
+| **H3** | Subsections within an H2 |
+| H4–H6 | Rarely needed; if used, keep the hierarchy consistent |
+
+The old rule "always H5 with a divider line before it" **no longer applies**. It came from
+the previous theme, where the page title did not act as its own heading.
+
+## Layout
+
+- Content runs in a centered column. For wide sections (tile rows, card grids), the
+  building blocks bring the appropriate width with them.
+- **Custom font sizes, custom colors, the default WordPress color palette, and drop caps
+  are disabled in the editor (`theme.json`).** You can only choose from the preset text
+  sizes and the AStA color palette—this protects dark mode and contrast automatically.
+- Spacing comes from blocks and groups, not from empty paragraphs.
+- Separator lines are allowed, but no longer mandatory.
+
+## Colors
+
+The website uses a fixed palette; the custom color picker as well as default WordPress
+palettes and gradients are locked in the editor. Whenever you need a color, pick it
+directly from the AStA palette:
+
+`primary` · `secondary` · `accent` · `base` · `base-alt` · `contrast` · `contrast-alt` ·
+`surface` · `link`
+
+Custom hex values (for example when pasting from Word or HTML) break dark mode and must
+not be used. See also
+[Link Text & Contrast](../barrierefreiheit/linktexte-und-kontrast.mdx).
+
+## Length and structure
+
+Long pages are fine as long as they are clearly structured:
+
+1. An opening paragraph explaining what the page is about.
+2. Sections with H2 headings and short paragraphs.
+3. At the bottom, the path to get in touch—the **AStA Contact Card** pattern on service
+   unit and general pages, or the [Übersichtskarte (Referat)](./referat-seite.mdx)
+   sidebar panel on department pages.

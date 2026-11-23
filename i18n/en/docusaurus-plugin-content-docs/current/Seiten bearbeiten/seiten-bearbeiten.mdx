@@ -1,0 +1,68 @@
+# Editing Pages
+
+import Screenshot from '@site/src/components/Screenshot';
+
+This is the most important task for everyone: every department (*Referat*), every service
+unit, and the StuPa has its own pages that you maintain yourselves.
+
+## Opening the editor
+
+**Way 1 — directly from the page.** Are you logged in while viewing the page? Then the
+top admin bar shows **Edit Page**. One click opens that exact page in the editor.
+
+**Way 2 — from the admin area.** Click **Pages** in the left sidebar, find the page in
+the list, and click **Edit**.
+
+Both paths take you to the same block editor.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/seiten-liste.png"
+  alt="Pages list in the WordPress admin area showing the Edit link"
+  caption="Way 2: In the Pages list, each page shows an Edit link underneath."
+/>
+
+## The block editor
+
+The editor is a workspace made of **blocks**. A paragraph is a block, a heading is a
+block, an image is a block, and a row of tiles is a group of blocks.
+
+| What you want to do | How |
+|---|---|
+| Write text | Click into the workspace and start typing |
+| Insert a new block | Click **+** between two blocks, or use the block inserter in the top left |
+| Find a block type quickly | Type `/` and enter the name, e.g. `/image` |
+| Move a block | Use the arrows in the block toolbar or drag by the six-dot handle |
+| Delete a block | Select the block, then press `Del` or use the toolbar options menu |
+| Block settings | Select a block; its options appear in the right sidebar |
+| Undo the last change | `Cmd/Ctrl + Z` |
+
+For recurring layouts, you do not need to assemble blocks by hand: ready-made **building
+blocks** are available. See [Building Blocks (Templates)](./bausteine.mdx).
+
+## Publishing a page
+
+Click **Update** (or **Save**) in the top right. The **Preview** button lets you check
+the page before it becomes visible to everyone.
+
+:::caution Before updating
+Click **Preview** first and check whether your edit produces the intended result. As soon
+as you update, every visitor to the website sees the change.
+:::
+
+:::warning Do not switch to draft
+The **Switch to draft** button removes the page from the public website. Anyone visiting
+its URL will no longer see the content. If a page needs to come down temporarily,
+coordinate with the webmaster team first.
+:::
+
+## Restoring older versions
+
+WordPress saves a revision every time you update a page. In the right sidebar under the
+**Page** tab, find **Revisions** to open the version history; click to compare changes
+and restore an earlier version.
+
+## Two things that surprise editors
+
+- **The title is the page's H1.** Do not write it again inside the body content.
+- **A new title does not change the URL.** The URL stays as it was when the page was
+  created. If you want a new URL, contact the webmaster team (for a redirect).

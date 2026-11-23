@@ -1,0 +1,95 @@
+---
+sidebar_position: 1
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Image Descriptions (Alt Text)
+
+The AStA's publications should be usable by everyone. That is why images carry
+**alternative text** (alt text): a brief description of what is shown. Screen readers
+read it aloud, browsers show it when an image fails to load, and it helps search
+engines.
+
+## Where alt text is stored
+
+Alt text is attached to the image in the **Media Library**, not to a single page. When an
+image is reused in multiple places, the same description applies everywhere.
+
+1. Open **Media** and click the image (or click *Replace* inside an Image block in the
+   editor).
+2. In **Attachment details** on the right, fill in the **Alternative Text** field.
+3. Save or confirm your selection.
+
+Inside an Image block, you can also set alt text directly in the sidebar; galleries
+provide the same field per image.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/anhang-alt-text.png"
+  alt="Attachment details panel for an image showing the Alternative Text and Caption fields"
+  caption="The Alternative Text field is in the image's Attachment details, with Caption right below it."
+/>
+
+## The editor checks this
+
+The website includes an automated check for blocks (*Block Accessibility Checks* plugin).
+In the editor, it reports:
+
+| Check | What is reported |
+|---|---|
+| Missing alt text | "Images are required to have alternative text or be marked as decorative" |
+| Length | Notice when longer than 125 characters |
+| Non-descriptive text | Notice for "Image of …", "Photo of …", or a bare filename |
+| Identical to caption | Notice — in that case, one of the two is redundant |
+
+The check does not block saving: you can still save the page. Even so, treat the notice
+seriously and fix it. Whether it appears as a warning or an error depends on the plugin
+configuration.
+
+## Decorative images
+
+An image that is purely visual and conveys no information (a divider line, background
+pattern, or ornament) should have an **empty** alt text—not the filename, not "image",
+and not "decorative".
+
+Screen readers will then skip the image, and the accessibility check explicitly accepts
+this.
+
+## Good alt text
+
+| Image | Good |
+|---|---|
+| Photo of an event | "Students sitting in the lecture hall during the general assembly" |
+| Department logo | "ARCHIPEL — Students with Disabilities" |
+| Divider line, background pattern | *(leave empty)* |
+| Screenshot containing text | The text in the image, briefly summarized |
+| Portrait photo | "Portrait of …" only if the name is not already printed next to it — otherwise the name alone is enough |
+
+**Do not** write "image", "photo", the filename, or a duplicate of the caption.
+
+## How to write good alt text
+
+**Be specific.** Describe what is actually visible and do not make assumptions—not about
+gender, and not about what is happening outside the frame. Imagine having to describe the
+image over the phone. Keep it short: 125 characters is the upper limit.
+
+**Do not start with "Image of …".** It is already obvious that it is alt text. Imagine a
+screen reader on an image-heavy page reading out "Image of the theater", "Image of the
+foyer", "Image of the box office staff". If the type of image helps explain the context
+(screenshot, diagram, illustration), name it—but avoid "photo".
+
+**Include text shown in the image.** If a poster contains key details, include them in the
+alt text—unless the exact same information is already written in the surrounding text.
+
+**Do not repeat yourself.** If the heading above the image already states it, the alt
+text does not need to repeat it.
+
+_These tips are adapted from
+[https://supercooldesign.co.uk/blog/how-to-write-good-alt-text](https://supercooldesign.co.uk/blog/how-to-write-good-alt-text)._
+
+## Next
+
+- [Link Text & Contrast](./linktexte-und-kontrast.mdx)
+- The website has an
+  [Accessibility Statement](https://asta-lueneburg.de/erklaerung-zur-barrierefreiheit/).
+  If you notice an accessibility barrier, report it there or to the webmaster team.
