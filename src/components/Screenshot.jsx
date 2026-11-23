@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
+import Translate, { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './Screenshot.module.css';
 
@@ -58,7 +59,14 @@ export default function Screenshot({ src, alt, caption, width, size = 'full' }) 
         ref={triggerRef}
         className={styles.trigger}
         onClick={() => setIsOpen(true)}
-        aria-label={`Screenshot vergrößern: ${alt}`}>
+        aria-label={translate(
+          {
+            id: 'screenshot.zoomButtonAriaLabel',
+            message: 'Screenshot vergrößern: {alt}',
+            description: 'Accessible label for the screenshot zoom button',
+          },
+          { alt },
+        )}>
         <img
           src={resolvedSrc}
           alt={alt}
@@ -67,7 +75,9 @@ export default function Screenshot({ src, alt, caption, width, size = 'full' }) 
           decoding="async"
         />
         <span className={styles.zoomHint} aria-hidden="true">
-          Vergrößern
+          <Translate id="screenshot.zoomHint" description="Zoom hint badge on screenshot">
+            Vergrößern
+          </Translate>
         </span>
       </button>
       {caption ? <figcaption className={styles.caption}>{caption}</figcaption> : null}
@@ -77,7 +87,14 @@ export default function Screenshot({ src, alt, caption, width, size = 'full' }) 
           className={styles.modalBackdrop}
           role="dialog"
           aria-modal="true"
-          aria-label={caption ? `Großansicht: ${caption}` : `Großansicht: ${alt}`}
+          aria-label={translate(
+            {
+              id: 'screenshot.modalAriaLabel',
+              message: 'Großansicht: {label}',
+              description: 'Accessible label for the enlarged screenshot dialog',
+            },
+            { label: caption || alt },
+          )}
           onClick={(event) => {
             if (event.target === event.currentTarget) {
               closeModal();
@@ -89,7 +106,11 @@ export default function Screenshot({ src, alt, caption, width, size = 'full' }) 
               ref={closeButtonRef}
               className={styles.closeButton}
               onClick={closeModal}
-              aria-label="Großansicht schließen">
+              aria-label={translate({
+                id: 'screenshot.closeButtonAriaLabel',
+                message: 'Großansicht schließen',
+                description: 'Accessible label for closing the enlarged screenshot dialog',
+              })}>
               ×
             </button>
             <img src={resolvedSrc} alt={alt} className={styles.modalImage} />

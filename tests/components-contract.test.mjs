@@ -5,8 +5,8 @@ import fs from 'node:fs';
 test('landing page fixes Willkommen typo, sets logo alt, and renders HomepageFeatures', () => {
   const indexJs = fs.readFileSync(new URL('../src/pages/index.js', import.meta.url), 'utf8');
   assert.doesNotMatch(indexJs, /Wilkommen/);
-  assert.match(indexJs, /title=\{?['"]Willkommen['"]\}?/);
-  assert.match(indexJs, /alt=['"][^'"]+['"]/);
+  assert.match(indexJs, /title=\{?(?:['"]Willkommen['"]|translate\(\{[^}]*message:\s*['"]Willkommen['"][^}]*\}\))\}?/);
+  assert.match(indexJs, /alt=\{?(?:['"][^'"]+['"]|translate\(\{[^}]*message:\s*['"][^'"]+['"][^}]*\}\))\}?/);
   assert.match(indexJs, /<HomepageFeatures\s*\/>/);
 });
 
@@ -38,4 +38,11 @@ test('custom.css preserves Gwyneth color tokens and hero contrast', () => {
   assert.match(css, /#1a1a2e/i);
   assert.match(css, /#0f0d1a/i);
   assert.match(css, /\.hero--primary\s+\.hero__title/);
+});
+
+test('landing components and Screenshot use @docusaurus/Translate for i18n', () => {
+  for (const rel of ['../src/pages/index.js', '../src/components/HomepageFeatures.js', '../src/components/Screenshot.jsx']) {
+    const src = fs.readFileSync(new URL(rel, import.meta.url), 'utf8');
+    assert.match(src, /@docusaurus\/Translate/, `${rel} must import @docusaurus/Translate`);
+  }
 });

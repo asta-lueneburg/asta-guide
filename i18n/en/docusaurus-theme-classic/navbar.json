@@ -1,0 +1,18 @@
+{
+  "logo.alt": {
+    "message": "AStA Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Anleitungen": {
+    "message": "Guides",
+    "description": "Navbar item with label Anleitungen"
+  },
+  "item.label.Dev Log": {
+    "message": "Dev Log",
+    "description": "Navbar item with label Dev Log"
+  },
+  "item.label.AStA Homepage": {
+    "message": "AStA Website",
+    "description": "Navbar item with label AStA Homepage"
+  }
+}

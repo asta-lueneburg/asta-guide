@@ -48,3 +48,15 @@ test('deploy.yml serializes FTP deploys and uses safe lftp FTPS mirror', () => {
   assert.match(yml, /\^cgi-bin\//);
   assert.match(yml, /\\\.git\//);
 });
+
+test('docusaurus.config.js enables de/en i18n, localeDropdown, and editLocalizedFiles', async () => {
+  const mod = await import('../docusaurus.config.js');
+  const config = mod.default || mod;
+  assert.equal(config.i18n.defaultLocale, 'de');
+  assert.deepEqual(config.i18n.locales, ['de', 'en']);
+  assert.equal(config.i18n.localeConfigs.de.label, 'DE');
+  assert.equal(config.i18n.localeConfigs.en.label, 'EN');
+  assert.equal(config.presets[0][1].docs.editLocalizedFiles, true);
+  assert.equal(config.presets[0][1].blog.editLocalizedFiles, true);
+  assert.ok(config.themeConfig.navbar.items.some((item) => item.type === 'localeDropdown'));
+});
