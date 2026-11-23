@@ -110,48 +110,116 @@ html[data-theme='dark'] {
 }
 
 .navbar__items--right {
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
-/* Sprachumschalter (DE/EN) und Hell/Dunkel-Schalter auf #0F0D1A stets kontrastreich halten. */
-.navbar [class*='colorModeToggle'] {
-  display: flex;
-  align-items: center;
+.navbar__items--right > a.navbar__item {
+  order: 0;
 }
 
-.navbar [class*='colorModeToggle'] button {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  min-width: 36px;
-  min-height: 36px;
-  padding: 0 0.45rem;
+.navbar__items--right > [class*='navbarSearchContainer'] {
+  order: 1;
 }
 
-.navbar [class*='colorModeToggle'] button:hover {
-  color: var(--asta-accent);
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: rgba(249, 168, 212, 0.6);
-}
-
-.navbar .navbar__item.dropdown > .navbar__link {
+/* Gespiegeltes Gwyneth-Kapselpaar: Dark/Light-Mode-Schalter + DE|EN-Umschalter. */
+.asta-dark-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  min-height: 36px;
-  padding: 0.25rem 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  font-weight: 600;
+  flex: 0 0 auto;
+  order: 2;
 }
 
-.navbar .navbar__item.dropdown > .navbar__link:hover {
+.asta-dark-toggle__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  min-height: 32px;
+  padding: 0.25rem 0.9rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.asta-dark-toggle__button:hover {
   color: var(--asta-accent);
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: rgba(249, 168, 212, 0.6);
+  border-color: var(--asta-accent);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.asta-language-switcher-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0;
+  order: 3;
+}
+
+.asta-header-language-switcher {
+  display: inline-flex;
+  align-items: stretch;
+  min-height: 32px;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.asta-header-language-switcher ul {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.asta-header-language-switcher .lang-item-de {
+  order: 1;
+}
+
+.asta-header-language-switcher .lang-item-en {
+  order: 2;
+}
+
+.asta-header-language-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.25rem 0.9rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.asta-header-language-switcher a:hover,
+.asta-header-language-switcher a:focus-visible {
+  color: var(--asta-accent);
+  text-decoration: none;
+}
+
+.asta-header-language-switcher .current-lang > a {
+  background: #ffffff;
+  color: var(--asta-chrome);
+}
+
+.asta-header-language-switcher .current-lang > a:hover,
+.asta-header-language-switcher .current-lang > a:focus-visible {
+  color: var(--asta-chrome);
+}
+
+.asta-mobile-language-item {
+  padding: 0.5rem 0.75rem;
 }
 
 .navbar-sidebar__close {
@@ -166,11 +234,12 @@ html[data-theme='dark'] {
     gap: 0.35rem;
   }
 
-  .navbar__items--right > .dropdown,
-  .navbar__items--right > [class*='colorModeToggle'] {
-    display: flex !important;
+  .navbar__items--right > .asta-dark-toggle,
+  .navbar__items--right > .asta-language-switcher-wrap {
+    display: inline-flex !important;
     align-items: center;
     padding: 0;
+    margin: 0;
   }
 
   .navbar__items--right > [class*='navbarSearchContainer'] {
@@ -178,21 +247,40 @@ html[data-theme='dark'] {
     right: auto !important;
     padding: 0;
   }
+
+  .asta-dark-toggle__label {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .asta-dark-toggle__button {
+    padding: 0.2rem 0.55rem;
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .asta-header-language-switcher {
+    min-height: 32px;
+  }
+
+  .asta-header-language-switcher a {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    padding-inline: 0.5rem;
+  }
+
   .navbar__brand {
-    margin-right: 0.35rem;
+    margin-right: 0.25rem;
   }
 
   .navbar__logo img {
-    max-width: 68px;
+    max-width: 58px;
     height: auto;
-  }
-
-  .navbar .navbar__item.dropdown > .navbar__link {
-    padding: 0.2rem 0.5rem;
-    font-size: 0.85rem;
   }
 }
 

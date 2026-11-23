@@ -443,5 +443,9 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.navbar.languageSwitcher.ariaLabel": {
+    "message": "Switch language",
+    "description": "Accessible label for the segmented DE/EN language switcher"
   }
 }

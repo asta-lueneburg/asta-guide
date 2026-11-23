@@ -49,7 +49,26 @@ test('landing components and Screenshot use @docusaurus/Translate for i18n', () 
 
 test('custom.css keeps language and light/dark switchers high-contrast and visible on mobile', () => {
   const css = fs.readFileSync(new URL('../src/css/custom.css', import.meta.url), 'utf8');
-  assert.match(css, /colorModeToggle/);
+  assert.match(css, /asta-dark-toggle__button/);
+  assert.match(css, /asta-header-language-switcher/);
+  assert.match(css, /\.current-lang\s*>\s*a/);
   assert.match(css, /@media\s*\(max-width:\s*996px\)/);
   assert.match(css, /navbarSearchContainer/);
+});
+
+test('custom header switchers mirror asta-lueneburg.de Dark/Light Mode and DE/EN pills', () => {
+  const darkToggle = fs.readFileSync(new URL('../src/theme/ColorModeToggle/index.js', import.meta.url), 'utf8');
+  assert.match(darkToggle, /asta-dark-toggle__button/);
+  assert.match(darkToggle, /Dark Mode/);
+  assert.match(darkToggle, /Light Mode/);
+  assert.match(darkToggle, /aria-pressed/);
+
+  const langSwitcher = fs.readFileSync(
+    new URL('../src/theme/NavbarItem/LocaleDropdownNavbarItem/index.js', import.meta.url),
+    'utf8',
+  );
+  assert.match(langSwitcher, /useAlternatePageUtils/);
+  assert.match(langSwitcher, /asta-header-language-switcher/);
+  assert.match(langSwitcher, /current-lang/);
+  assert.match(langSwitcher, /aria-current/);
 });
