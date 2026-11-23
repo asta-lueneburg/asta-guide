@@ -1,0 +1,109 @@
+---
+title: Maintaining Department Pages
+description: How to fill in Featured image, Order, Badge (Startseite), and Übersichtskarte (Referat) on department pages.
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Departments (*Referate*) and autonomous groups have their own pages under **AStA
+Referate** (English: **AStA Societies**, URL path `/en/asta-departments/...`). Alongside
+the page body, you maintain four settings directly in the right editor sidebar (**Page**
+tab)—inserting a separate card pattern into the page content is no longer needed.
+
+:::info Which fields appear where
+- **Featured image**, **Order**, and **Badge (Startseite)** control your department's
+  tile in the [Referate Grid](./bausteine.mdx#referate-grid) on the homepage.
+- **Übersichtskarte (Referat)** generates the info box (*Contact & meetings* on English
+  pages / *Kontakt & Treffen* on German pages) directly on your department page.
+:::
+
+## 1. Featured image (logo) and Order
+
+1. Open the department page and select the **Page** tab in the right sidebar.
+2. Under **Set featured image**, choose the department's logo from the Media Library
+   (preferably SVG or PNG with a transparent background) and enter a short
+   **Alternative Text** (for example, the name of the department).
+3. Under **Page Attributes → Order**, enter a number if needed. It determines the tile's
+   position in the **Referate Grid**; without a number, the overview sorts alphabetically
+   by page title.
+
+Further tips on replacing a logo are in [Gallery](../galerie.mdx).
+
+## 2. Badge (Startseite)
+
+The **Badge (Startseite)** panel appears in the right sidebar **only on German department
+pages** (direct child pages of *AStA Referate*). Even when your WordPress user profile is
+set to English, this panel and all of its labels appear in German. It sets the small
+pill badge in the bottom-right corner of your homepage tile.
+
+Six modes are available under *Art des Badges*:
+
+| Mode | Effect |
+|---|---|
+| **Automatisch** | Derives the badge automatically from the saved meeting time (*Treffzeit*). |
+| **Regelmäßig** | Structured inputs for *Wochentag* (weekday, *Montag*–*Sonntag*), *Zeit* (start time), *bis* (optional end time), and *Raum / Ort* (room/location; note: *"Campus Lüneburg weglassen. Rotes Feld nur wenn nötig."*). |
+| **Nach Ankündigung** | Shows the fixed label `nach Ankündigung`. |
+| **Online** | Shows the fixed label `Online`. |
+| **Eigener Text** | Free-text field with at most **32 characters** (`… / 32 Zeichen`) and clickable *Beispiele* chips (e.g. `Mi 18:00 · C14.102`, `Do 16:00 · WoZi`, `Online`, `nach Ankündigung`). |
+| **Kein Badge** | Hides the badge on the homepage tile completely. |
+
+Directly below the options, the live preview (*Vorschau*) renders the finished tile with
+its featured image (or the page title as fallback) and the current badge text in real
+time.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/referat-badge-panel.png"
+  size="compact"
+  alt="Badge (Startseite) sidebar panel in the block editor showing the six German modes under Art des Badges and the live tile preview"
+  caption="The Badge (Startseite) panel in the right sidebar — visible only on German department pages, with German UI labels even in an English profile."
+/>
+
+:::caution Keep it short
+Badges sit on top of the logo on the tile. In **Regelmäßig** or **Eigener Text** mode,
+use only weekday, time, and a short room code (maximum 32 characters) instead of full
+sentences.
+:::
+
+## 3. Übersichtskarte (Referat)
+
+The **Übersichtskarte (Referat)** panel appears on **both German and English department
+pages** and controls the info box (*Contact & meetings* on `/en/asta-departments/...` /
+*Kontakt & Treffen* on German pages) on that department page. Its field labels in the
+sidebar remain in German even under an English WordPress profile, while the live card
+preview (*Vorschau*) and the published card on `/en/asta-departments/...` render in
+English.
+
+The panel provides nine fields:
+
+| Field | Note |
+|---|---|
+| **Rolle/Label** | Optional heading for the contact row (default: "Contact person" / "Ansprechpartner*in") |
+| **Ansprechpartner*in** | Name(s) of the responsible contact person(s) |
+| **Zeiten-Label** | Optional heading for the meeting time (default: "Meeting" / "Treffen") |
+| **Treffzeit** | When the department meets or holds office hours |
+| **Raum-Label** | Optional heading for the location (default: "Room" / "Raum") |
+| **Raum/Ort** | Building and room number or meeting point |
+| **E-Mail** | Department email address (rendered as a `mailto:` link) |
+| **Instagram** | Handle only without URL, e.g. `asta_lueneburg` (without `@`) |
+| **Telegram** | Full URL, e.g. `https://t.me/…` |
+
+:::caution Minimum rule: 2 content fields
+**Fill in at least 2 content fields for the card to appear on the page.** If fewer than
+two content fields are filled in, the website hides the overview card automatically and
+the live preview (*Vorschau*) in the panel displays a notice.
+:::
+
+<Screenshot
+  src="/img/guide-gwyneth-en/referat-overviewcard-panel.png"
+  size="compact"
+  alt="Übersichtskarte (Referat) sidebar panel in the block editor showing the nine German input fields and the live English card preview"
+  caption="The Übersichtskarte (Referat) panel on an English department page (/en/asta-departments/...): German input labels with a live English card preview."
+/>
+
+## 4. Do not insert a Referat Card pattern in the content
+
+The former *Referat Card* pattern was removed from the block inserter. Maintain
+department contact details, meeting times, and social media links exclusively through
+**Übersichtskarte (Referat)** and **Badge (Startseite)**—for general service pages, the
+**AStA Contact Card** pattern remains available under
+[Building Blocks (Templates)](./bausteine.mdx).

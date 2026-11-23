@@ -1,0 +1,76 @@
+# Gallery
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Images and files for the website: how to upload, describe, replace, and display them as a
+gallery on a page.
+
+All images and files are stored centrally in the **Media Library** (**Media**). From
+there, they are inserted into pages and posts, and department logos on the department
+tiles come from there as well.
+
+> **Changed with the relaunch:** The previous guide described the *NextGEN Gallery*
+> plugin. It is no longer installed. Galleries are now built using the standard WordPress
+> **Gallery** block.
+
+## Uploading images
+
+1. Go to **Media → Add Media File** (or click **Upload** inside an Image block in the
+   editor).
+2. Select your file and wait for the upload to finish.
+3. Click the image and fill in the **Attachment details** on the right.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/mediathek.png"
+  alt="WordPress Media Library in grid view displaying uploaded images"
+  caption="The Media Library: all images live here, and this is where you search and replace them."
+/>
+
+| Field | Rule |
+|---|---|
+| **File name** | Descriptive, lowercase, with hyphens: `referat-archipel-logo.jpg`, not `IMG_2481.jpg`. The file name becomes part of the image URL |
+| **Alternative Text** | Describes what is shown in the image — mandatory, see [Image Descriptions (Alt Text)](./barrierefreiheit/bilder-alt-texte) |
+| **Caption** | Optional; appears as a caption below the image |
+| **Size** | Resize photos to at most 2000 px on the longest edge before uploading; the website scales images down, but still stores and loads the original |
+| **Format** | JPEG for photos, PNG for graphics with transparency, SVG for logos only |
+
+<Screenshot
+  src="/img/guide-gwyneth-en/anhang-alt-text.png"
+  alt="Attachment details panel for an image showing the Alternative Text field"
+  caption="The Attachment details panel of an image. Enter the image description in the Alternative Text field."
+/>
+
+## Replacing an image
+
+Open the image in **Media** and replace it via **Replace media**. Because the file URL
+stays the same, every place that already uses that image automatically shows the updated
+file.
+
+This is the right approach whenever "the logo changed" or a photo is outdated. Uploading a
+brand-new image instead would require updating every single page where it is embedded.
+
+## Department logos
+
+A department's logo is the **Featured image** of its department page. The **Referate
+Grid** building block pulls the logo from there and displays it on the tile.
+
+Where to set the logo: open the department page → right sidebar, **Page** tab → **Set
+featured image**. For how to also maintain the display order, homepage badge, and overview
+card, see [Maintaining Department Pages](./Seiten%20bearbeiten/referat-seite).
+
+## Adding a gallery to a page
+
+To display several images together on a page, use the **Gallery** block:
+
+1. Insert the **Gallery** block.
+2. Select images from the Media Library or upload new ones.
+3. In the right sidebar, adjust the layout and set the number of columns.
+
+Alt text is still required for every image. You can enter it directly per image inside
+the Gallery block.
+
+:::info Where are the old galleries?
+Galleries created with NextGEN are no longer rendered. If a page is still missing a
+gallery that used to be there, contact the webmaster—the images themselves are still in
+the Media Library.
+:::

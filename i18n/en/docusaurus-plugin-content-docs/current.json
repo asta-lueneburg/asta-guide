@@ -1,0 +1,94 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Seiten bearbeiten": {
+    "message": "Editing Pages",
+    "description": "The label for category 'Seiten bearbeiten' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Bettenbörse": {
+    "message": "Bed Exchange",
+    "description": "The label for category 'Bettenbörse' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Barrierefreiheit": {
+    "message": "Accessibility",
+    "description": "The label for category 'Barrierefreiheit' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Archiv (vor dem Relaunch)": {
+    "message": "Archive (pre-relaunch, German only)",
+    "description": "The label for category 'Archiv (vor dem Relaunch)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.doc.Start": {
+    "message": "Home",
+    "description": "The label for the doc item 'Start' in sidebar 'tutorialSidebar', linking to the doc home"
+  },
+  "sidebar.tutorialSidebar.doc.Warum Website?": {
+    "message": "Why a Website?",
+    "description": "The label for the doc item 'Warum Website?' in sidebar 'tutorialSidebar', linking to the doc warum-website"
+  },
+  "sidebar.tutorialSidebar.doc.Accounts und Passwörter": {
+    "message": "Accounts & Passwords",
+    "description": "The label for the doc item 'Accounts und Passwörter' in sidebar 'tutorialSidebar', linking to the doc anmelden"
+  },
+  "sidebar.tutorialSidebar.doc.Seitenaufbau und Layout": {
+    "message": "Page Structure & Layout",
+    "description": "The label for the doc item 'Seitenaufbau und Layout' in sidebar 'tutorialSidebar', linking to the doc Seiten bearbeiten/seiten-aufbau"
+  },
+  "sidebar.tutorialSidebar.doc.Referat-Seiten pflegen": {
+    "message": "Maintaining Department Pages",
+    "description": "The label for the doc item 'Referat-Seiten pflegen' in sidebar 'tutorialSidebar', linking to the doc Seiten bearbeiten/referat-seite"
+  },
+  "sidebar.tutorialSidebar.doc.Bausteine (Vorlagen)": {
+    "message": "Building Blocks (Templates)",
+    "description": "The label for the doc item 'Bausteine (Vorlagen)' in sidebar 'tutorialSidebar', linking to the doc Seiten bearbeiten/bausteine"
+  },
+  "sidebar.tutorialSidebar.doc.Einfügen weiterer Blöcke": {
+    "message": "Inserting Additional Blocks",
+    "description": "The label for the doc item 'Einfügen weiterer Blöcke' in sidebar 'tutorialSidebar', linking to the doc Seiten bearbeiten/weitere-bloecke"
+  },
+  "sidebar.tutorialSidebar.doc.Übersetzungen bearbeiten": {
+    "message": "Editing Translations",
+    "description": "The label for the doc item 'Übersetzungen bearbeiten' in sidebar 'tutorialSidebar', linking to the doc uebersetzungen-bearbeiten"
+  },
+  "sidebar.tutorialSidebar.doc.Menü und Mega-Menü": {
+    "message": "Menu & Mega Menu",
+    "description": "The label for the doc item 'Menü und Mega-Menü' in sidebar 'tutorialSidebar', linking to the doc menue-und-megamenue"
+  },
+  "sidebar.tutorialSidebar.doc.Galerie": {
+    "message": "Gallery",
+    "description": "The label for the doc item 'Galerie' in sidebar 'tutorialSidebar', linking to the doc galerie"
+  },
+  "sidebar.tutorialSidebar.doc.Veranstaltungen": {
+    "message": "Events",
+    "description": "The label for the doc item 'Veranstaltungen' in sidebar 'tutorialSidebar', linking to the doc kalender"
+  },
+  "sidebar.tutorialSidebar.doc.StuPa Beschlussdatenbank": {
+    "message": "StuPa Resolutions Database",
+    "description": "The label for the doc item 'StuPa Beschlussdatenbank' in sidebar 'tutorialSidebar', linking to the doc beschlussdatenbank"
+  },
+  "sidebar.tutorialSidebar.doc.Betrieb und Vermittlung": {
+    "message": "Operation & Placement",
+    "description": "The label for the doc item 'Betrieb und Vermittlung' in sidebar 'tutorialSidebar', linking to the doc bettenboerse/verwaltung"
+  },
+  "sidebar.tutorialSidebar.doc.Bildbeschreibungen (Alternativtexte)": {
+    "message": "Image Descriptions (Alt Text)",
+    "description": "The label for the doc item 'Bildbeschreibungen (Alternativtexte)' in sidebar 'tutorialSidebar', linking to the doc barrierefreiheit/bilder-alt-texte"
+  },
+  "sidebar.tutorialSidebar.doc.Linktexte und Kontrast": {
+    "message": "Link Text & Contrast",
+    "description": "The label for the doc item 'Linktexte und Kontrast' in sidebar 'tutorialSidebar', linking to the doc barrierefreiheit/linktexte-und-kontrast"
+  },
+  "sidebar.tutorialSidebar.doc.Semesterticket-Erstattung": {
+    "message": "Semester Ticket Refund",
+    "description": "The label for the doc item 'Semesterticket-Erstattung' in sidebar 'tutorialSidebar', linking to the doc semesterticket-rueckerstattung"
+  },
+  "sidebar.tutorialSidebar.doc.Checkliste vor dem Veröffentlichen": {
+    "message": "Pre-Publish Checklist",
+    "description": "The label for the doc item 'Checkliste vor dem Veröffentlichen' in sidebar 'tutorialSidebar', linking to the doc checkliste"
+  },
+  "sidebar.tutorialSidebar.doc.Was die Redaktion nicht sieht": {
+    "message": "What Editors Don't See",
+    "description": "The label for the doc item 'Was die Redaktion nicht sieht' in sidebar 'tutorialSidebar', linking to the doc hintergrund"
+  }
+}

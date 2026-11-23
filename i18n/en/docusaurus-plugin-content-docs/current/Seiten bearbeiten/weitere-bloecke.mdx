@@ -1,0 +1,91 @@
+# Inserting Additional Blocks
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Alongside paragraphs and headings, a handful of blocks appear on almost every page.
+These are the most important ones.
+
+:::info Check first
+For whole sections, there is usually already a [building block](./bausteine.mdx). A
+building block is faster to insert and guaranteed to match the layout—custom block
+combinations are only needed for special cases.
+:::
+
+<Screenshot
+  src="/img/guide-gwyneth-en/block-inserter.png"
+  alt="Block inserter with search field and list of all available blocks"
+  caption="The block inserter: search at the top, blocks grouped by category underneath."
+/>
+
+## Embedding images
+
+1. Click **+** between two blocks → **Image** block.
+2. Choose **Upload** for a new file, or **Media Library** for an existing image.
+3. Select the image and fill in **Alternative Text** in the right sidebar under
+   **Settings**.
+
+The Image block also includes an optional **Caption** block, which appears as small text
+below the image.
+
+You can drag the handles in the editor to resize the image; alignment and style options
+are also available in the sidebar. Choose **Full width** for full-bleed sections, or
+**Wide width** for a wide section without side margins.
+
+:::caution Important
+Every image needs alternative text—or an intentionally **empty** one if it is purely
+decorative. The editor flags missing alt text automatically. Details are in
+[Image Descriptions (Alt Text)](../barrierefreiheit/bilder-alt-texte.mdx).
+:::
+
+## Media files and PDFs
+
+Files belong in the **Media Library**, not uploaded separately as page attachments.
+
+1. Go to **Media → Add Media File** and upload the file.
+2. In the attachment view, set **Alternative Text** and copy the **File URL**.
+3. In the editor, either link to that URL from descriptive text—or embed the PDF
+   directly.
+
+To embed a PDF, insert the **Embed PDF.js Viewer** block and choose the file from the
+Media Library under **PDF Source**. Width and height can be configured directly on the
+block.
+
+An embedded PDF is often awkward to read on a phone. For documents that people will read
+in full rather than just skim, a link with descriptive link text is the better choice.
+
+## Table of contents
+
+> **Changed with the relaunch:** There is no table-of-contents block anymore. The
+> previous guide described one that came from the predecessor theme.
+
+Long pages stay readable through a clear heading hierarchy instead: H2 for main
+sections, H3 underneath, and an opening paragraph that summarizes what the page covers.
+
+## Instagram
+
+For the Instagram feed, use the **Social Media (Instagram)** building block—it provides
+both the heading and the feed in one block, displaying posts from the AStA account
+`@astauniluenburg`.
+
+Embedding a **department's** own Instagram feed is a task for the webmaster team: the
+account must be configured in the feed plugin. Send an email to
+webmaster@asta-lueneburg.de instead of modifying plugin settings yourself.
+
+## Videos and other embeds
+
+YouTube videos and other external content are inserted using the **Embed** block by
+pasting the URL.
+
+The website only loads external embeds after a visitor gives consent (via the **Embed
+Privacy** plugin). Until then, visitors see a placeholder with a notice. This is
+intentional, not an error—it protects visitor privacy.
+
+## What you do not need
+
+- **HTML blocks** — only if explicitly instructed by the webmaster team.
+- **Shortcodes** — only documented ones such as `[beschlussdatenbank]`. See
+  [StuPa Resolutions Database](../beschlussdatenbank.mdx).
+- **Custom font sizes, free color pickers, and drop caps** — already disabled in the
+  editor via `theme.json` (along with default WordPress color palettes and gradients).
+  Only choose from the preset sizes and the AStA palette.
+- **Empty paragraphs as spacers** — spacing comes from blocks and layout containers.

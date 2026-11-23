@@ -34,44 +34,53 @@ Datei, ändert den Text und committet — kein CMS dazwischen.
 
 | Was | Datei |
 |---|---|
-| Kapitel — eine Datei pro Seite | `docs/<kapitel>.mdx` (z. B. `docs/beitraege-erstellen.mdx`) |
-| Vorlagen für neue Kapitel & Dev-Log-Einträge | `templates/kapitel-vorlage.mdx`, `templates/devlog-vorlage.mdx` |
+| Kapitel (Deutsch) — eine Datei pro Seite | `docs/<kapitel>.mdx` (z. B. `docs/beitraege-erstellen.mdx`) |
+| Kapitel (Englisch, 1:1 zu den 21 aktiven Kapiteln) | `i18n/en/docusaurus-plugin-content-docs/current/<kapitel>.mdx` |
+| UI-, Seitenleisten-, Navigations- und Footer-Übersetzungen | `i18n/en/code.json`, `i18n/en/docusaurus-plugin-content-docs/current.json`, `i18n/en/docusaurus-theme-classic/` |
+| Vorlagen für neue Kapitel & Dev-Log-Einträge | `templates/kapitel-vorlage.mdx`, `templates/chapter-template.en.mdx`, `templates/devlog-vorlage.mdx` |
 | Reihenfolge, Gruppen und Namen in der Seitenleiste | `sidebars.js` |
-| Startseite mit „Letztes Update“ und Änderungstabelle | `docs/home.mdx` |
-| Dev-Log-Einträge | `blog/JJJJ-MM-TT-titel.mdx`, Autor*innen in `blog/authors.yml` |
-| Screenshots | `static/img/guide-gwyneth/` |
+| Startseite mit „Letztes Update“ und Änderungstabelle | `docs/home.mdx`, `i18n/en/docusaurus-plugin-content-docs/current/home.mdx` |
+| Dev-Log-Einträge (nur Deutsch) | `blog/JJJJ-MM-TT-titel.mdx`, Autor*innen in `blog/authors.yml` |
+| Screenshots (Deutsch / Englisch) | `static/img/guide-gwyneth/`, `static/img/guide-gwyneth-en/` |
 | Zoom-Komponente für Screenshots | `src/components/Screenshot.jsx` |
-| Archiv: Kapitel, die es nicht mehr gibt | `docs/ticket-refund/`, `docs/bettenboerse/einrichtung.mdx`, `docs/bettenboerse/entwickler.mdx`, `docs/Seiten bearbeiten/seitenleisten-bearbeiten.mdx` |
+| Archiv (nur Deutsch): Kapitel, die es nicht mehr gibt | `docs/ticket-refund/`, `docs/bettenboerse/einrichtung.mdx`, `docs/bettenboerse/entwickler.mdx`, `docs/Seiten bearbeiten/seitenleisten-bearbeiten.mdx` |
 | Farben, Schrift, Abstände | `src/css/custom.css` |
 | Seitentitel, Navigation, Footer, Adresse | `docusaurus.config.js` |
 
 ### Bearbeiten mit Vorlagen oder direkt im Browser
 
-1. **Kleine Änderungen direkt im Browser:** Auf jeder Guide-Seite unten auf **Diese Seite bearbeiten** klicken. GitHub öffnet direkt die passende Datei im Editor (`asta-lueneburg/asta-guide`). Änderung eintragen, einen neuen Branch anlegen und einen Pull Request starten.
-2. **Neues Kapitel anlegen:** `templates/kapitel-vorlage.mdx` nach `docs/<kapitel>.mdx` kopieren, die Platzhalter ausfüllen, die Seite in `sidebars.js` eintragen und über `<Screenshot src="/img/guide-gwyneth/..." alt="..." caption="..." />` bebildern.
+1. **Kleine Änderungen direkt im Browser:** Auf jeder Guide-Seite unten auf **Diese Seite bearbeiten** (bzw. **Edit this page** auf `/en/`) klicken. GitHub öffnet direkt die passende lokalisierte Datei im Editor (`asta-lueneburg/asta-guide`). Änderung eintragen, einen neuen Branch anlegen und einen Pull Request starten.
+2. **Neues Kapitel anlegen (zweisprachig):** `templates/kapitel-vorlage.mdx` nach `docs/<kapitel>.mdx` und `templates/chapter-template.en.mdx` nach `i18n/en/docusaurus-plugin-content-docs/current/<kapitel>.mdx` kopieren, die Platzhalter ausfüllen, die Seite in `sidebars.js` (und die englische Überschrift ggf. in `i18n/en/docusaurus-plugin-content-docs/current.json`) eintragen und über `<Screenshot src="/img/guide-gwyneth/..." ... />` bzw. `<Screenshot src="/img/guide-gwyneth-en/..." ... />` bebildern. Archiv-Kapitel und `blog/` werden nicht übersetzt.
 3. **Neuen Dev-Log-Eintrag anlegen:** `templates/devlog-vorlage.mdx` nach `blog/JJJJ-MM-TT-titel.mdx` kopieren.
 4. **Pull Request prüfen:** Die Checkliste in `.github/PULL_REQUEST_TEMPLATE.md` abhaken. Nach dem Merge auf `main` baut die GitHub Action die Seite neu und lädt sie per FTP hoch.
 
 ## Screenshots
 
-Die Bilder der Anleitung liegen in `static/img/guide-gwyneth/`. Sie zeigen die echte
-Website (`asta-lueneburg.de`) bzw. deren lokalen Zwilling `dev-asta-gwyneth.local` —
-keine Mockups. Die Screenshots werden automatisiert gegen `dev-asta-gwyneth.local` mit
-`local-dev/tools/capture-guide-screenshots.mjs` erzeugt.
+Die Bilder der Anleitung liegen für Deutsch in `static/img/guide-gwyneth/` und für
+Englisch in `static/img/guide-gwyneth-en/`. Sie zeigen die echte Website (`asta-lueneburg.de`)
+bzw. deren lokalen Zwilling `dev-asta-gwyneth.local` — keine Mockups. Die Screenshots
+werden automatisiert aus dem Ordner `local-dev/` gegen `dev-asta-gwyneth.local` erzeugt:
+
+```sh
+# Deutsche Screenshots (static/img/guide-gwyneth/)
+$ node tools/capture-guide-screenshots.mjs
+
+# Englische Screenshots (static/img/guide-gwyneth-en/)
+$ node tools/capture-guide-screenshots.mjs --locale en
+```
 
 Beim Erneuern oder Ergänzen gilt:
 
 - auf einer Gwyneth-Installation aufnehmen, nicht auf der Vorgänger-Website;
-- deutsche Oberfläche (Admin-Sprache `de_DE`), damit die Bezeichnungen zu den Texten passen:
-  **Textauszug**, **Vorlagen**, **Badge (Startseite)**, **Übersichtskarte (Referat)** und **AStA-Übersicht**;
+- für die deutsche Fassung die deutsche Oberfläche (`de_DE`) verwenden (**Textauszug**, **Vorlagen**, **Badge (Startseite)**, **Übersichtskarte (Referat)**, **AStA-Übersicht**); für die englische Fassung `--locale en` bzw. ein Profil mit `en_US` verwenden (die benutzerdefinierten Referat-Panels bleiben auch dort deutsch beschriftet);
 - für manuelle Screenshots im Adminbereich ein temporäres Konto mit Administrator-Rechten
   anlegen und es nach dem Shooting wieder löschen;
-- jedes Bild und jedes `<Screenshot>` braucht einen aussagekräftigen **Alternativtext** (`alt`).
+- jedes Bild (`<= 350 KiB`) und jedes `<Screenshot>` braucht einen aussagekräftigen **Alternativtext** (`alt`).
 
 ## Tests und Veröffentlichung
 
-Vor dem Commit oder Pull Request sollten die Vertragstests und der Production-Build lokal
-durchlaufen:
+Vor dem Commit oder Pull Request sollten die Vertragstests (inklusive `i18n`-Parität und
+Asset-Prüfung) und der zweisprachige Production-Build (`de` + `en`) lokal durchlaufen:
 
 ```sh
 $ npm test

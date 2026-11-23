@@ -1,0 +1,105 @@
+---
+sidebar_position: 5
+---
+
+import ImageAside from '@site/src/components/ImageAside';
+import Screenshot from '@site/src/components/Screenshot';
+
+
+# Editing Translations
+
+The website is bilingual: **German** is the default language, and **English** is the
+second language. Translations are managed with the **Polylang Pro** plugin.
+
+:::info
+The earlier instructions for WPML are outdated. The website no longer uses WPML;
+translations now live in Polylang and are managed through the **Languages** menu.
+:::
+
+:::info
+If an English translation is missing, the English site displays the German content as a
+fallback in some places, and untranslated items do not appear in the English menu.
+:::
+
+## Where to find translations
+
+In the admin sidebar, there is a top-level **Languages** menu:
+
+| Item | Purpose |
+|---|---|
+| **Languages** | The list of configured languages (German, English). Only webmasters change settings here |
+| **Translations** | Fixed UI strings that do not live inside pages or posts (theme strings, forms, footer) |
+| **Settings** | Polylang configuration. Please do not modify |
+
+## Creating or editing a translation
+
+1. Open the page or post in its **German** version.
+2. In the right sidebar of the editor, find the **Languages** panel. It shows which
+   language the content belongs to, along with the link to the other language:
+   - a **plus (`+`)** icon means no translation exists yet. Clicking it creates a linked
+     English draft;
+   - a **pencil** icon means the translation already exists. Clicking it opens that version.
+3. Alternatively, you can do this from the list view: under **Pages → All Pages** (or
+   **Posts → All Posts**), a column displays each item's language and provides the same
+   `+` / pencil icons.
+
+<ImageAside src="/img/guide-gwyneth-en/sprache-panel.png" third alt="Languages panel in the editor sidebar showing Deutsch and the plus button for the English translation">
+The <strong>Languages</strong> panel in the editor: the current language of the item and, next to it,
+the <strong>+</strong> to create the English version (or a pencil icon to open an existing one).
+</ImageAside>
+
+:::caution Important
+Changes to the German original are **not automatically copied** to the English version.
+Both versions must be maintained separately—title, body text, blocks, and images in the
+English version are edited independently.
+:::
+
+An English draft will only appear on the public website once it has been published. Use
+**Preview** beforehand.
+
+## The language switcher on the website
+
+At the top right of the header sits the language switcher with **DE** and **EN**.
+Switching takes the visitor to the translation of the currently open page; if no
+translation exists, the site falls back accordingly.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/sprache-englisch.png"
+  alt="English homepage with English menu and the DE/EN language switcher in the header"
+  caption="The English version of the homepage. The language switcher sits at the top right of the header."
+/>
+
+## Translating fixed strings
+
+Some texts do not live inside a page, but in the theme or a form—for example, homepage
+section headings (*Latest News*, *Our Departments*, *Next Events*), footer labels, or the
+dark-mode toggle labels.
+
+You translate these strings under **Languages → Translations**:
+
+1. Filter the list by the group **`AStA Gwyneth`**—that is the collection of theme strings.
+2. Each row shows the German source string on the left and the English translation input
+   field on the right.
+3. Enter the translation and save changes. The website picks it up immediately without
+   having to edit a page.
+
+:::caution Important
+The source strings in this list are keyed by the theme. Only edit the English column—never
+change the German source string, or the theme will no longer find the translation.
+:::
+
+## Menus per language
+
+Each language has its **own menu** (**Appearance → Menus**). Polylang creates a
+counterpart in the other language for every theme menu location; you can tell them apart
+by their language name.
+
+Whenever you add or rename an item in the German menu, please add the corresponding item
+to the English menu as well—otherwise it will be missing on the English site. For
+switching languages inside a menu, there is also the **Language switcher** menu item.
+
+:::tip
+If your account has machine translation (DeepL) enabled, Polylang offers a translation
+suggestion in the editor. Always review the result sentence by sentence—machine
+translation does not reliably preserve tone or university-specific terminology.
+:::

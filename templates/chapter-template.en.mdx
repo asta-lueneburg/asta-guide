@@ -1,0 +1,46 @@
+---
+title: Chapter Title
+description: Short summary for search and previews (120–155 characters).
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+## Overview
+
+What is this chapter about, who is it intended for (departments / *Referate*, service units,
+StuPa, administration), and which permissions in the WordPress admin area are required?
+
+:::info When this chapter helps
+Brief orientation note: what does this workflow achieve — and when is another chapter
+(such as [Building Blocks (Templates)](./Seiten%20bearbeiten/bausteine.mdx) or
+[Creating Posts](./beitraege-erstellen.mdx)) a better fit?
+:::
+
+## Step by step
+
+Describe each step in the exact order shown on screen. Use the English WordPress admin
+labels (`en_US`)—for example **Excerpt**, **Featured image**, and **Patterns**—together
+with the German-labeled custom panels **Badge (Startseite)**, **Übersichtskarte (Referat)**,
+and **AStA-Übersicht**.
+
+1. Open the relevant section in the WordPress admin area.
+2. Enter the content and check the **Excerpt** (120–155 characters) and **Featured image**.
+3. Click the **+** icon and open the **Patterns** tab to insert the required building block.
+4. Check the **Preview** on desktop, mobile, and in dark mode before publishing.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/example.png"
+  alt="Descriptive alternative text explaining exactly what is shown in the screenshot"
+  caption="Short caption describing the step shown above."
+/>
+
+## Notes
+
+- **Do not forget alternative text:** Every `<Screenshot>` requires a meaningful `alt`
+  attribute; an empty `alt` causes a build or render error.
+- **Compact layout:** For narrow sidebar screenshots, you can optionally set `size="compact"`.
+
+:::caution Important
+Never publish placeholder text such as "text coming soon." Review the
+[Pre-Publish Checklist](./checkliste.mdx) before saving.
+:::

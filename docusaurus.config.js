@@ -21,6 +21,21 @@ const config = {
   organizationName: 'asta-lueneburg', // Usually your GitHub org/user name.
   projectName: 'asta-guide', // Usually your repo name.
 
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
+    localeConfigs: {
+      de: {
+        label: 'DE',
+        htmlLang: 'de-DE',
+      },
+      en: {
+        label: 'EN',
+        htmlLang: 'en-US',
+      },
+    },
+  },
+
   presets: [
     [
       'classic',
@@ -29,6 +44,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/asta-lueneburg/asta-guide/edit/main/',
+          editLocalizedFiles: true,
         },
         blog: {
           showReadingTime: true,
@@ -36,6 +52,7 @@ const config = {
             type: 'all',
           },
           editUrl: 'https://github.com/asta-lueneburg/asta-guide/edit/main/',
+          editLocalizedFiles: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,6 +77,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [{name: 'robots', content: 'noindex'}],
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: '',
         logo: {
@@ -77,6 +99,10 @@ const config = {
           {
             href: 'https://asta-lueneburg.de',
             label: 'AStA Homepage',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
             position: 'right',
           },
         ],

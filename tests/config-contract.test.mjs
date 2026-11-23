@@ -31,3 +31,34 @@ test('deploy.yml uses Node 20 or 22 LTS', () => {
   const yml = fs.readFileSync(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
   assert.match(yml, /node-version:\s*(20|22)/);
 });
+
+test('deploy.yml serializes FTP deploys and uses safe lftp FTPS mirror', () => {
+  const yml = fs.readFileSync(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
+  assert.match(yml, /workflow_dispatch:/);
+  assert.match(yml, /concurrency:\s*\n\s*group:\s*deploy-ftp-\$\{\{\s*github\.ref\s*\}\}\s*\n\s*cancel-in-progress:\s*false/);
+  assert.doesNotMatch(yml, /genietim\/ftp-action/);
+  assert.match(yml, /set ftp:ssl-force true/);
+  assert.match(yml, /--parallel=2/);
+  assert.match(yml, /--no-perms/);
+  assert.match(yml, /--no-umask/);
+  assert.match(yml, /--delete/);
+  assert.match(yml, /\\\.htaccess\$/);
+  assert.match(yml, /\\\.well-known\//);
+  assert.match(yml, /\\\.ftpquota\$/);
+  assert.match(yml, /\^cgi-bin\//);
+  assert.match(yml, /\\\.git\//);
+});
+
+test('docusaurus.config.js enables de/en i18n, localeDropdown, and editLocalizedFiles', async () => {
+  const mod = await import('../docusaurus.config.js');
+  const config = mod.default || mod;
+  assert.equal(config.i18n.defaultLocale, 'de');
+  assert.deepEqual(config.i18n.locales, ['de', 'en']);
+  assert.equal(config.i18n.localeConfigs.de.label, 'DE');
+  assert.equal(config.i18n.localeConfigs.en.label, 'EN');
+  assert.equal(config.presets[0][1].docs.editLocalizedFiles, true);
+  assert.equal(config.presets[0][1].blog.editLocalizedFiles, true);
+  assert.ok(config.themeConfig.navbar.items.some((item) => item.type === 'localeDropdown'));
+  assert.equal(config.themeConfig.colorMode.disableSwitch, false);
+  assert.equal(config.themeConfig.colorMode.respectPrefersColorScheme, false);
+});

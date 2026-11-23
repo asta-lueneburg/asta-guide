@@ -1,0 +1,101 @@
+# Menu & Mega Menu
+
+import Screenshot from '@site/src/components/Screenshot';
+
+The main navigation is not a simple link tree—it is a **Mega Menu** with **five panels**.
+Each panel opens as a surface containing groups, subtitles, and a dedicated panel action.
+
+## The five panels
+
+| Panel | Groups | Examples |
+|---|---|---|
+| **Services** | Semesterticket · Counselling & Help · Rental & Rooms | Semesterticket Refunds, Awareness, Childcare, Equipment Rental |
+| **AStA** | About us · Jobs · Departments | Speakers, Office Team, Finance Department, Statutes, Departments Overview |
+| **News** (*Aktuelles*) | *(no groups — single list)* | All Notices, Events, Sommer Open Air, Coraci Festival |
+| **How to Study?** | Studies · Autonomous Teaching · Housing | Student Guide, Exams, Scholarships, Housing Listings, Bed Exchange |
+| **StuPa** | StuPa · Motions & Resolutions · Elections | Meetings, Committees, Resolution Database, Election Results |
+
+:::info Where "Housing" (*Wohnen*) lives
+Although **Wohnen** used to be its own top-level panel, the housing pages now live as the
+third group inside the **How to Study?** panel. Look there if you are searching for a
+housing link.
+:::
+
+## Actions at the end of a panel
+
+Several panels end with a highlighted call-to-action link:
+
+| Panel | Action | Target |
+|---|---|---|
+| Services | "All Services" | `/en/service/` (`/service/`) |
+| News | "Submit a post" | Submission form |
+| StuPa | "More about StuPa" | `/en/stupa/` (`/stupa/`) |
+
+There are also "All …" links inside groups, such as **All Departments** after
+*Departments*, **All Resolutions** after *Motions & Resolutions*, and **All Notices**
+inside the *News* panel.
+
+Technically, these actions work in two ways: the "All …" links are **menu items** with the
+CSS class `asta-cta-link`, whereas the panel-bottom actions are **Max Mega Menu CTA
+links**. Both are configured by the webmaster and are not visible in the block editor.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/mega-menu-services.png"
+  alt="Open Services panel in the mega menu showing groups, subtitles, and the All Services action"
+  caption="The Services panel: groups with titles and descriptions, plus the 'All Services' action at the bottom."
+/>
+
+Every entry inside a panel has a **title** and a **short description**. The description is
+the line of text shown beneath the title inside the panel; it comes from the menu item's
+**Description** field (which can be toggled on via **Screen Options** in the top right of
+the Menus screen).
+
+## Who changes what
+
+| Change | Responsible |
+|---|---|
+| Adding, renaming, or moving a link | You, via **Appearance → Menus** |
+| Panel layout, columns, icons, CTA text | Webmaster via **Max Mega Menu** |
+| Adding a new top-level panel | Webmaster, after consultation |
+
+Max Mega Menu settings are powerful and apply site-wide. They are managed on the plugin's
+own admin page rather than in the block editor.
+
+## Adding a link
+
+1. Go to **Appearance → Menus**.
+2. Select the menu **`Hauptmenü (Top)`** (for German) or **`Hauptmenü (Top) - Englisch`**
+   (for English).
+3. Add the page or custom link, drag it to the right position in the menu structure, and
+   fill in the **Description** field.
+4. Click **Save Menu**.
+5. Make sure to create the matching entry in the other language's menu (`Hauptmenü (Top)`
+   and `Hauptmenü (Top) - Englisch`) as well—if it is missing there, it will not appear on
+   that language version of the site.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/menues.png"
+  alt="Appearance → Menus admin screen showing available items on the left and the menu structure on the right"
+  caption="Appearance → Menus: available items on the left, the structure of the selected menu on the right."
+/>
+
+:::info Two main menus, two footers
+Alongside the two main menus, there are **`Footer-Menü-de`** and **`Footer Menu (EN)`**.
+These are also maintained separately.
+:::
+
+## Order
+
+The order in the navigation follows the order of items in the menu structure—not
+alphabetical order. Dragging items updates the order as soon as you save.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/mega-menu-stupa.png"
+  alt="Open StuPa panel in the mega menu showing groups for StuPa, Motions & Resolutions, and Elections"
+  caption="The StuPa panel with its groups and the 'More about StuPa' action."
+/>
+
+:::warning Warning
+Menu items are navigation, not page content. Rearranging the menu structure changes how
+every visitor navigates the site. Always coordinate larger restructures beforehand.
+:::
