@@ -15,7 +15,7 @@ const TaskCards = [
     title: 'Referatsseite pflegen',
     to: '/docs/Seiten%20bearbeiten/referat-seite',
     description:
-      'Steckbrief, Sprechzeiten, Ansprechpersonen und Vorlagen auf der eigenen Referatsseite aktuell halten.',
+      'Beitragsbild, Startseiten-Badge und Übersichtskarte auf der eigenen Referatsseite aktuell halten.',
   },
   {
     step: '03 · Zweisprachig',
