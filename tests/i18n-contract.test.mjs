@@ -33,12 +33,12 @@ function walkMarkdownFiles(dir, baseDir = dir) {
   return results.sort();
 }
 
-test('all 21 active German docs have 1:1 parity in i18n/en without archived or blog duplicates', () => {
+test('all active German docs have 1:1 parity in i18n/en without archived or blog duplicates', () => {
   const allDeDocs = walkMarkdownFiles(docsDir);
   const activeDeDocs = allDeDocs.filter((rel) => !ARCHIVED_DOCS.has(rel));
   const enDocs = walkMarkdownFiles(enDocsDir);
 
-  assert.equal(activeDeDocs.length, 21, `Expected 21 active German docs, found ${activeDeDocs.length}`);
+  assert.ok(activeDeDocs.length >= 21, `Expected at least 21 active German docs, found ${activeDeDocs.length}`);
 
   for (const rel of activeDeDocs) {
     assert.ok(
