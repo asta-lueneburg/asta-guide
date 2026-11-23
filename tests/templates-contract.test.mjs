@@ -19,3 +19,20 @@ test('README.md has no stale AStA-Luneburg links and documents template workflow
   assert.match(readme, /asta-lueneburg\/asta-guide/);
   assert.match(readme, /templates\/kapitel-vorlage\.mdx/);
 });
+
+test('English chapter template, PR template bilingual checklist, and README i18n workflow exist', () => {
+  const enTemplate = fs.readFileSync(new URL('../templates/chapter-template.en.mdx', import.meta.url), 'utf8');
+  const pr = fs.readFileSync(new URL('../.github/PULL_REQUEST_TEMPLATE.md', import.meta.url), 'utf8');
+  const readme = fs.readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+
+  assert.match(enTemplate, /import Screenshot from '@site\/src\/components\/Screenshot'/);
+  assert.match(enTemplate, /<Screenshot/);
+  assert.match(enTemplate, /\/img\/guide-gwyneth-en\//);
+
+  assert.match(pr, /i18n\/en\/docusaurus-plugin-content-docs\/current\//);
+  assert.match(pr, /static\/img\/guide-gwyneth-en\//);
+
+  assert.match(readme, /i18n\/en\//);
+  assert.match(readme, /templates\/chapter-template\.en\.mdx/);
+  assert.match(readme, /capture-guide-screenshots\.mjs --locale en/);
+});
