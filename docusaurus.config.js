@@ -77,6 +77,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [{name: 'robots', content: 'noindex'}],
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: '',
         logo: {

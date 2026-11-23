@@ -46,3 +46,10 @@ test('landing components and Screenshot use @docusaurus/Translate for i18n', () 
     assert.match(src, /@docusaurus\/Translate/, `${rel} must import @docusaurus/Translate`);
   }
 });
+
+test('custom.css keeps language and light/dark switchers high-contrast and visible on mobile', () => {
+  const css = fs.readFileSync(new URL('../src/css/custom.css', import.meta.url), 'utf8');
+  assert.match(css, /colorModeToggle/);
+  assert.match(css, /@media\s*\(max-width:\s*996px\)/);
+  assert.match(css, /navbarSearchContainer/);
+});

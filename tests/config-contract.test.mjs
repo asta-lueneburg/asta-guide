@@ -59,4 +59,6 @@ test('docusaurus.config.js enables de/en i18n, localeDropdown, and editLocalized
   assert.equal(config.presets[0][1].docs.editLocalizedFiles, true);
   assert.equal(config.presets[0][1].blog.editLocalizedFiles, true);
   assert.ok(config.themeConfig.navbar.items.some((item) => item.type === 'localeDropdown'));
+  assert.equal(config.themeConfig.colorMode.disableSwitch, false);
+  assert.equal(config.themeConfig.colorMode.respectPrefersColorScheme, false);
 });

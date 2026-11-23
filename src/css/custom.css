@@ -109,6 +109,93 @@ html[data-theme='dark'] {
   border-bottom: 3px solid var(--ifm-color-primary);
 }
 
+.navbar__items--right {
+  gap: 0.45rem;
+}
+
+/* Sprachumschalter (DE/EN) und Hell/Dunkel-Schalter auf #0F0D1A stets kontrastreich halten. */
+.navbar [class*='colorModeToggle'] {
+  display: flex;
+  align-items: center;
+}
+
+.navbar [class*='colorModeToggle'] button {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 0.45rem;
+}
+
+.navbar [class*='colorModeToggle'] button:hover {
+  color: var(--asta-accent);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(249, 168, 212, 0.6);
+}
+
+.navbar .navbar__item.dropdown > .navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 36px;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.navbar .navbar__item.dropdown > .navbar__link:hover {
+  color: var(--asta-accent);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(249, 168, 212, 0.6);
+}
+
+.navbar-sidebar__close {
+  color: #ffffff;
+}
+
+/* Beide Umschalter (Sprache + Hell/Dunkel) bleiben auch auf schmalen Displays jederzeit sichtbar. */
+@media (max-width: 996px) {
+  .navbar__items--right {
+    flex: 0 0 auto;
+    margin-left: auto;
+    gap: 0.35rem;
+  }
+
+  .navbar__items--right > .dropdown,
+  .navbar__items--right > [class*='colorModeToggle'] {
+    display: flex !important;
+    align-items: center;
+    padding: 0;
+  }
+
+  .navbar__items--right > [class*='navbarSearchContainer'] {
+    position: static !important;
+    right: auto !important;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__brand {
+    margin-right: 0.35rem;
+  }
+
+  .navbar__logo img {
+    max-width: 68px;
+    height: auto;
+  }
+
+  .navbar .navbar__item.dropdown > .navbar__link {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* Hero-Banner: in Hell und Dunkel auf Gwyneth-Violett mit weißem Text (AA/AAA). */
 .hero--primary {
   --ifm-hero-background-color: #6d28d9;
