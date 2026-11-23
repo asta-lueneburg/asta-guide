@@ -1,0 +1,147 @@
+---
+sidebar_position: 2
+---
+
+import ImageAside from '@site/src/components/ImageAside';
+import Screenshot from '@site/src/components/Screenshot';
+
+
+# Creating Posts
+
+Do you have news from your department, service unit, or the StuPa? Anyone with an
+account can publish **Posts**. They appear under "News" (*Aktuelles*), on the homepage,
+and in category listings.
+
+:::info Post or page?
+A post is a blog article: dated, categorized, shown in chronological listings, and moves
+downward over time. A page is the permanent place for long-term information and lives in
+the menu. When in doubt: use a post for news, and a page for anything that should still
+be accurate six months from now.
+:::
+
+## Four components
+
+A post consists of a **Title**, **Excerpt**, **Featured image**, and **Content**.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/beitrag-editor.png"
+  alt="Block editor for a new post showing the title field, content area, and right sidebar"
+  caption="The post editor: content on the left, all post metadata on the right."
+/>
+
+### 1. Title
+
+Keep it specific and free of clickbait. The title is the heading of the post and appears
+in listings and in the browser tab.
+
+If you change the title later, the URL (slug) does not update automatically.
+
+### 2. Excerpt
+
+The excerpt is **not optional polish**: the theme uses it as the `meta description` for
+search engines and as the description text in social media previews. You will find it in
+the right sidebar under the **Post** tab under **Excerpt**; it starts collapsed as **Add an
+excerpt…**.
+
+- Two to three sentences, **120 to 155 characters**
+- Reads like natural prose, not a bulleted keyword list
+- Summarizes what the post is about—avoid "click here to read more"
+
+<ImageAside src="/img/guide-gwyneth-en/editor-seitenleiste.png" third alt="Right sidebar in the Post tab showing Set featured image, Status, Excerpt, and Categories">
+At the top you will see <strong>Set featured image</strong>, and further down the link{' '}
+<strong>Add an excerpt…</strong>. Clicking it opens the excerpt text box.
+</ImageAside>
+
+:::caution Important
+If the Excerpt is left empty, the theme falls back to the **first paragraph** of the
+post. If there is no text paragraph either, search engines only show a generic fallback
+with the title. Writing a dedicated excerpt is always better.
+:::
+
+### 3. Featured image
+
+The image shown on cards, listings, and link previews. In the right sidebar under the
+**Post** tab, click **Set featured image** and choose an image from the Media Library or
+upload a new one.
+
+- Without a featured image, the image area on the card remains empty.
+- Add **Alternative Text** when uploading (see
+  [Image Descriptions (Alt Text)](./barrierefreiheit/bilder-alt-texte)).
+- For social media previews, the featured image serves as the preview image.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/beitragsbild.png"
+  alt="Dialog for selecting a featured image from the Media Library"
+  caption="'Set featured image' opens the Media Library; switch tabs at the top to upload a new file or pick an existing one."
+/>
+
+### 4. Content
+
+The main body text, built from blocks. The same rules apply as on pages: start content
+headings at **H2**, and do not set custom font sizes or colors manually. See
+[Page Structure & Layout](./Seiten%20bearbeiten/seiten-aufbau) for details.
+
+## Category
+
+Every post belongs in **one** category. The category determines where the post appears
+(German posts use the German categories shown below; English posts use their English
+counterparts):
+
+| Category (DE / EN) | Appears under |
+|---|---|
+| **Aktuelles → AStA News** / **News → AStA News** | `/news/aktuelles/asta-news/` (`/en/news/news-en/asta-news-en/`) |
+| **Aktuelles → Veranstaltungen** / **News → Events** | `/news/aktuelles/veranstaltungen/` (`/en/news/news-en/events/`) |
+| **Aktuelles → Newsletter** | `/news/aktuelles/newsletter/` |
+| **Aktuelles → Jobs (extern)** | `/news/aktuelles/jobs-extern/` |
+| **Aktuelles → Sonstiges** | `/news/aktuelles/sonstiges/` |
+| **Jobs (AStA)** | `/news/jobs/` |
+| **StuPa** | `/news/stupa/` |
+| **Referate** / **Departments** | `/news/referate/` |
+| **Wohnen** / **Housing** | `/news/wohnen/` |
+
+Select the category in the right sidebar under the **Post** tab in **Categories**.
+
+<ImageAside src="/img/guide-gwyneth-en/kategorien.png" third alt="Categories panel in the right sidebar showing the category hierarchy">
+Categories are shown as a hierarchy in the sidebar: parent category <strong>Aktuelles</strong>{' '}
+with its subcategories underneath. Check one row, not several.
+</ImageAside>
+
+:::caution Important
+- **One** category is enough. Selecting multiple categories creates duplicate entries in
+  listings.
+- **Never select "Uncategorized" (*Unkategorisiert*).** This category must remain empty.
+- If your category is missing, do not pick an unrelated one—ask the webmaster.
+:::
+
+## No sidebars anymore
+
+The old "Sidebars" tab and the option to assign an organization sidebar were **removed**
+with the relaunch. Posts are displayed full-width; state who the post is from in the text
+or via the post's **Author** field.
+
+## Publishing
+
+Click **Publish** in the top right. The **Preview** button lets you check the post before
+anyone else sees it.
+
+You can also prepare a post and schedule it for later: under **Publish** (next to
+*Status*), click **Immediately** and set the desired date and time. The post will go live
+automatically at that time.
+
+:::caution Important
+Always check the preview before publishing. Once a post is published, every visitor to the
+website can see it.
+:::
+
+## Two rules that are often forgotten
+
+- **Never publish "text coming soon."** If a section is missing, leave it out or save the
+  post as a **Draft**. Placeholders are removed by the editorial team.
+- **Link instead of duplicating.** If information is already on a service page, link to it
+  rather than copying it. Otherwise two separate versions will drift out of sync.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/news-kacheln.png"
+  alt="Three English news post tiles showing featured image, title, and excerpt"
+  caption="How a post appears in the overview: featured image, title, and excerpt."
+/>

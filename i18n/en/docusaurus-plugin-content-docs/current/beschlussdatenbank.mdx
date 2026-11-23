@@ -1,0 +1,68 @@
+# StuPa Resolutions Database
+
+import Screenshot from '@site/src/components/Screenshot';
+
+The Resolutions Database (*Beschlussdatenbank*) is a dedicated application inside the
+WordPress admin area. Publicly, it is available on the
+[Resolution Database](https://asta-lueneburg.de/en/stupa/resolutions/resolution-database/)
+page (German:
+[Beschlussdatenbank](https://asta-lueneburg.de/stupa/beschluesse/beschlussdatenbank/)).
+
+:::info Access
+The database is **password-protected**. The password is managed separately from WordPress
+user accounts; it is set anew at the beginning of each legislative term and then shared
+with the webmaster.
+:::
+
+## In the admin area
+
+The **Resolutions** menu in the left sidebar has three entries:
+
+| Item | Purpose |
+|---|---|
+| **View Resolutions** | List of all entries, search, editing, and deletion |
+| **Add Resolution** | Record a new resolution |
+| **Settings** | Dropdown options, sorting, and the columns of the public table |
+
+## Adding a resolution
+
+1. Go to **Resolutions → Add Resolution**.
+2. Fill in the form fields (the plugin's internal form labels are in German):
+   *Sitzungsdatum* (meeting date), *Gremium* (body), *Antragsteller*in* (proposer),
+   *Titel des Beschlusses* (title), *Beschlusstext* (resolution text), *Begründung*
+   (rationale), *Ergebnis* (outcome), *Ablaufdatum* (expiry date), and *Stichworte*
+   (keywords).
+3. Click **Save** (*Beschluss speichern*).
+
+<Screenshot
+  src="/img/guide-gwyneth-en/beschluss-hinzufuegen.png"
+  alt="Add Resolution form with fields for meeting date, body, title, resolution text, and rationale"
+  caption="Resolutions → Add Resolution: all fields for a resolution on one screen."
+/>
+
+For the resolution text and rationale, the editor provides **Visual** and **Code** tabs.
+When pasting text from a meeting draft, paste it via the **Code** tab first and then
+review the formatting in the **Visual** tab—this avoids bringing over hidden formatting
+from Word.
+
+:::caution Important
+A resolution is an official record, not a blog post. The meeting date (*Sitzungsdatum*)
+determines the sorting in the public table—double-check it before saving.
+:::
+
+## Settings
+
+Under **Resolutions → Settings**, you configure:
+
+- which **bodies** (*Gremien*) and **proposers** (*Antragsteller*innen*) appear in the
+  dropdown lists,
+- which **columns** the public table displays (one line per selection),
+- how the table is sorted by default.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/beschluss-einstellungen.png"
+  alt="Resolutions database Settings screen showing dropdown options and public table column settings"
+  caption="Settings: dropdown options, public table columns, and default sort order."
+/>
+
+These settings apply to all resolutions. Changes take effect publicly right away.

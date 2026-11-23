@@ -1,0 +1,133 @@
+# How to AStA Website
+
+import Screenshot from '@site/src/components/Screenshot';
+
+**Welcome to the guide for the AStA website!**
+
+> Last updated: November 23, 2026 (Ezra)
+
+Since the relaunch, the website has been running on the **Gwyneth** theme. After a lot of
+work, this closed major security gaps. Accessibility by design also closes major gaps that
+had been a goal for five years, including screen navigation, screen-reader optimization,
+keyboard navigation, and much more.
+
+The menu was completely redesigned as well, along with mobile optimization. In addition,
+new integrations improve visibility and mobilization potential: department plenary times are
+visible directly on the homepage, and Telegram info channels and Instagram channels can be
+displayed directly on the website. Students do not need Instagram to view posts, and no data
+is sent to Meta.
+
+The website is the AStA's central, permanent home: everything published here can be found,
+linked, and cited.
+
+This guide is aimed at everyone who maintains content: departments (*Referate*), service
+units (*Servicebetriebe*), project leads, and the StuPa.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/startseite.png"
+  alt="English homepage of the AStA website with header, quick access tiles, and latest news"
+  caption="The homepage: header with search, language switcher, and mega menu, followed by Quick Access and Latest News."
+/>
+
+## What changed with the relaunch
+
+| Before | Now |
+|---|---|
+| Pages had their own **sidebar** with widgets | Every page is a **full-width block template**. There are no sidebars or widgets anymore |
+| Content was assembled freely block by block | For recurring layouts, there are **ready-made building blocks (patterns)** |
+| The **Excerpt** was just a summary | The Excerpt is now also the **meta description** for search engines and social media previews |
+| Missing alt text went unnoticed | The editor **flags missing alt text** while editing |
+| The menu was a flat list of links | The menu has **five panels** with groups and dedicated actions |
+| There was no color scheme | The website supports **Light and Dark mode**, both built from the same color palette |
+
+## Where to get help
+
+| Topic | Contact |
+|---|---|
+| Account, password, permissions | webmaster@asta-lueneburg.de |
+| Content questions, approvals | oeffentlichkeit@asta-lueneburg.de |
+| Something is broken or looks wrong | webmaster@asta-lueneburg.de with a screenshot and page URL |
+
+:::caution Important
+Not every area of the website is accessible to everyone. That is intentional: it prevents
+anyone from accidentally changing settings that affect the entire website. Where a chapter
+requires special permissions, this is noted in the text.
+:::
+
+## How this guide is structured
+
+1. [Why a Website?](./warum-website.mdx) — who is responsible for what
+2. [Accounts & Passwords](./anmelden.mdx) — signing in, changing your password
+3. [Creating Posts](./beitraege-erstellen.mdx) — publishing news
+4. **Editing Pages** — structure, new pages, [Maintaining Department Pages](./Seiten%20bearbeiten/referat-seite), building blocks, additional blocks
+5. [Editing Translations](./uebersetzungen-bearbeiten.mdx) — the English version
+6. [Menu & Mega Menu](./menue-und-megamenue.mdx)
+7. [Gallery](./galerie.mdx)
+8. [Events](./kalender.mdx)
+9. [StuPa Resolutions Database](./beschlussdatenbank.mdx)
+10. [Bed Exchange](./bettenboerse/verwaltung.mdx)
+11. [Accessibility](./barrierefreiheit/bilder-alt-texte)
+12. [Semester Ticket Refund](./semesterticket-rueckerstattung.mdx)
+13. [Pre-Publish Checklist](./checkliste)
+14. [What Editors Don't See](./hintergrund)
+
+## History of this guide
+
+This guide is maintained continuously: older notes remain intact to document the state of
+their time. Chapters that no longer apply are kept unchanged in the **Archive (pre-relaunch,
+German only)**.
+
+> **November 2024 (Leonie)**
+>
+> After a lot of work on the website a few years ago, we are now tackling projects again!
+>
+> The goal remains the same as Lukas put it so well 2.5 years ago: to provide a clear and
+> accessible way to find and share information. Over the past year during my time as
+> webmaster, a lot has already happened regarding the menu and page structure, and a bit
+> more will still change. Most noticeable, however, is probably the new color scheme based
+> on the PR team's color code.
+>
+> Everything stated in the message below is still relevant, so please give it a read.
+
+> **Message from February 23, 2022 (Lukas)**
+>
+> Most recently in 2018, we put a lot of work into giving our web presence a complete
+> overhaul, with the goal of giving students—as well as the departments, service units,
+> and all other units in the AStA and StuPa—a clear and accessible way to look up or share
+> information and get involved. The result was and is the website as it looks today, with
+> slight changes over the years.
+>
+> This guide is meant to make it easy for you—the great departments, service units, and
+> project leads of the AStA, the StuPa, and everyone else who has something to share on the
+> website—to work with the site.
+>
+> If you still have questions about website features despite this guide, if something is
+> unclear, if something doesn't work or you get an error message, or if you have comments
+> or suggestions for improving this guide or the website, please feel free to contact the
+> AStA webmaster anytime at webmaster@asta-lueneburg.de.
+>
+> If you need support designing graphics, pages, or texts for the website, you can also
+> contact the AStA Public Relations officers by email at oeffentlichkeit@asta-lueneburg.de.
+
+:::info From the original edition: "Important"
+Not all areas/functions of the website are accessible to everyone. Above all, this keeps
+things clear and ensures that nobody accidentally changes website settings that should not
+be changed. Therefore, in the table of contents, each chapter/explained feature was marked
+with the respective groups that have access to it—distinguishing between Departments
+(*Referate*), Service Units (*Service-Betriebe*), StuPa, and Administration (*Verwaltung*),
+which includes the Speakers (*Sprecher*innen*) and Public Relations officers, for example.
+:::
+
+## Recent changes
+
+| Date | Change |
+|---|---|
+| **November 23, 2026** | Bilingual English edition launched (`DE` / `EN` language switcher, translated chapters, and `en_US` WordPress screenshots); guide upgraded to **Docusaurus 3** with local search, clickable `<Screenshot>` zoom modal, and quick-start task cards; new chapter [Maintaining Department Pages](./Seiten%20bearbeiten/referat-seite) (**Badge (Startseite)**, **Übersichtskarte (Referat)**); hidden *Referat Card* removed; locked editor options (`theme.json`), **Tools → AStA-Übersicht**, and dark-mode text labels documented |
+| **November 17, 2026** | Updated the guide for the Gwyneth relaunch: new chapters **Building Blocks (Templates)**, **Menu & Mega Menu**, **Pre-Publish Checklist**, and **What Editors Don't See**; **29 new screenshots**; chapters on sidebars, NextGEN galleries, and the 9-Euro-Ticket dashboard preserved in **Archive (pre-relaunch)**; field names aligned with the UI |
+| August 2025 | Added "Why a Website?" and "Inserting Additional Blocks"; revised "Accounts & Passwords", "Editing Pages", and "Editing Sidebars" |
+| April 2022 | Documented Bed Exchange (*Bettenbörse*) |
+| February 2022 | Published new website guide |
+
+You can also follow the changelog in the [Dev Log](/blog).
+
+**Until then, we wish you lots of fun and success managing the AStA website!**

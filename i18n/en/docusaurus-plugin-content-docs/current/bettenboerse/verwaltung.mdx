@@ -1,0 +1,67 @@
+# Bed Exchange
+
+import Screenshot from '@site/src/components/Screenshot';
+
+The Bed Exchange (*Bettenbörse*) arranges temporary places to sleep: connecting students
+who have a spare sofa or bed with first-year students looking for a place for their
+first few weeks.
+
+Publicly, it is located on the
+[Bed exchange](https://asta-lueneburg.de/en/service/bed-exchange/) page (German:
+[Bettenbörse](https://asta-lueneburg.de/service/bettenboerse/)).
+
+> **Changed with the relaunch:** There is no dedicated "Bettenbörse" plugin anymore. The
+> page is a regular WordPress page containing a **Fluent Forms** form; the old plugin
+> setup and `ASTA_ENV` instructions no longer apply.
+
+## How submissions arrive
+
+The form embedded on the page is the Fluent Forms form **`Bettenboerse (ID 1)`**. Every
+submission appears as an entry in the backend:
+
+1. Open **Fluent Forms → Entries**.
+2. Select the **`Bettenboerse (ID 1)`** form.
+3. View, filter, and open individual entries.
+
+<Screenshot
+  src="/img/guide-gwyneth-en/fluent-eintraege.png"
+  alt="Entries of the Bettenboerse (ID 1) form in Fluent Forms showing submitted data"
+  caption="Form submissions in Fluent Forms → Entries."
+/>
+
+Entries contain personal contact details. Only process them inside the backend—do not
+export them into group chats or private spreadsheets.
+
+## Matching
+
+The Bed Exchange puts people in touch; it does not match them automatically:
+
+1. Pair compatible entries (location, dates, number of beds).
+2. Introduce both sides to each other via email.
+3. Note the status on the entry after matching.
+
+## Opening and closing
+
+The campaign runs at the start of the winter semester. A dedicated paragraph on the page
+states the current status—for example:
+
+> **The Bed Exchange is closed for Winter Semester 25/26.**
+> *(German: „Die Bettenbörse ist für das Wintersemester 25/26 geschlossen.“)*
+
+To open the exchange, this notice is replaced or removed; to close it, it is put back.
+The webmaster makes this edit upon request from the responsible department.
+
+## What does not belong on the page
+
+- **Long-term rental listings.** Use the
+  [notice board / post submission form](https://asta-lueneburg.de/service/beitrag-einreichen/)
+  for those instead.
+- **Contact details as plain text.** They belong in the form, not in the page copy.
+- **Confirmed bed promises.** The page describes the service; it does not allocate beds
+  itself.
+
+:::caution Data protection
+Entries contain names, email addresses, and location details. They must not be
+forwarded, shared in group chats, or exported to cloud spreadsheets. Once the campaign
+ends, the entries are deleted; deletion is performed by the webmaster.
+:::
