@@ -3,10 +3,15 @@ name: Deploy to FTP
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-ftp-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy to KAS FTPS
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,11 +24,30 @@ jobs:
           npm ci
           npm test
           npm run build
-      - name: Upload ftp
-        uses: genietim/ftp-action@9aec41ec4f779cdb6d7f20ef6d0edbf094a7a0b4
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "build"
-          remoteDir: "/"
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends lftp
+      - name: Upload via FTPS (lftp)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          : "${FTP_SERVER:?FTP_SERVER is required}"
+          : "${FTP_USERNAME:?FTP_USERNAME is required}"
+          : "${FTP_PASSWORD:?FTP_PASSWORD is required}"
+          umask 077
+          cat <<'LFTP_RC' > ~/.lftprc
+          set cmd:fail-exit yes
+          set net:timeout 60
+          set net:max-retries 10
+          set net:reconnect-interval-base 5
+          set net:reconnect-interval-multiplier 2
+          set ftp:ssl-allow true
+          set ftp:ssl-force true
+          set ssl:verify-certificate false
+          LFTP_RC
+
+          LFTP_PASSWORD="$FTP_PASSWORD" lftp --env-password -u "$FTP_USERNAME" -- "$FTP_SERVER" <<'LFTP_SCRIPT'
+          mirror -R --verbose --parallel=2 --no-perms --no-umask --delete --exclude '^\.htaccess$' --exclude '^\.well-known/' --exclude '^\.ftpquota$' --exclude '^cgi-bin/' --exclude '^\.git/' build /
+          quit
+          LFTP_SCRIPT

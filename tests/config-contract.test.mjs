@@ -31,3 +31,20 @@ test('deploy.yml uses Node 20 or 22 LTS', () => {
   const yml = fs.readFileSync(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
   assert.match(yml, /node-version:\s*(20|22)/);
 });
+
+test('deploy.yml serializes FTP deploys and uses safe lftp FTPS mirror', () => {
+  const yml = fs.readFileSync(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
+  assert.match(yml, /workflow_dispatch:/);
+  assert.match(yml, /concurrency:\s*\n\s*group:\s*deploy-ftp-\$\{\{\s*github\.ref\s*\}\}\s*\n\s*cancel-in-progress:\s*false/);
+  assert.doesNotMatch(yml, /genietim\/ftp-action/);
+  assert.match(yml, /set ftp:ssl-force true/);
+  assert.match(yml, /--parallel=2/);
+  assert.match(yml, /--no-perms/);
+  assert.match(yml, /--no-umask/);
+  assert.match(yml, /--delete/);
+  assert.match(yml, /\\\.htaccess\$/);
+  assert.match(yml, /\\\.well-known\//);
+  assert.match(yml, /\\\.ftpquota\$/);
+  assert.match(yml, /\^cgi-bin\//);
+  assert.match(yml, /\\\.git\//);
+});
